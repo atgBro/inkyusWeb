@@ -1,0 +1,22 @@
+img {
+	max-width: 200px;
+    height: auto;
+}
+div {
+    text-align: center
+}
+body {
+    background-color: dimgrey;
+}
+.container {
+     background-image: url("../images/pancarte.png");
+ background-position: top, center;
+ background-size: 200px auto;
+ background-repeat: no-repeat;
+    min-height: 400px;
+}
+.link {
+    background-image: url("../images/fondLink.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
