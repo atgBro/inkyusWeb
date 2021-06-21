@@ -10,13 +10,13 @@
     font-weight: 2em;
     transition-duration: 200ms;
 }
-body{
+body, .wrapper{
     width: 100%;
     overflow-x: hidden;
     background-color: $fond;
     height: 100%;
 }
-#darkMode:checked ~ .root body{
+#darkMode:checked ~ .root .wrapper{
     background-color: $drakGray;
 }
 /* texte*/
