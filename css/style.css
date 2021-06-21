@@ -205,7 +205,7 @@ nav .burger a:hover {
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   background-color: #e6ebec;
   height: 100%;
@@ -558,34 +558,34 @@ article::-webkit-scrollbar {
   z-index: 3;
 }
 
-.projet a:hover ~ .voile {
-  width: 50%;
+@media screen and (min-width: 1000px) {
+  .projet a:hover ~ .voile {
+    width: 50%;
+  }
+  .projet a:hover ~ .fond {
+    background-size: 130%;
+  }
+  .projet a:hover ~ h2 {
+    -webkit-transform: scale(1.2) translateX(8%) translateY(-0.2em);
+            transform: scale(1.2) translateX(8%) translateY(-0.2em);
+  }
+  .projet a:hover ~ p {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 @media screen and (max-width: 1000px) {
-  .projet a:hover ~ .voile {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .projet a:hover ~ .voile {
+  .projet .voile {
     width: 100%;
   }
-}
-
-.projet a:hover ~ .fond {
-  background-size: 130%;
-}
-
-.projet a:hover ~ h2 {
-  -webkit-transform: scale(1.2) translateX(8%) translateY(-0.2em);
-          transform: scale(1.2) translateX(8%) translateY(-0.2em);
-}
-
-.projet a:hover ~ p {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  .projet .fond {
+    background-size: 130%;
+  }
+  .projet p {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 /* PROJECT */
@@ -749,6 +749,14 @@ article::-webkit-scrollbar {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #ffb71c), color-stop(80%, rgba(0, 0, 0, 0.3)));
   background: linear-gradient(180deg, #ffb71c 80%, rgba(0, 0, 0, 0.3) 80%);
   color: #241c2e;
+}
+
+.bgFullPurple {
+  background: #9131ff;
+}
+
+#darkMode:checked ~ .root .bgFullPurple {
+  background: #ffb71c;
 }
 
 /* pj section */

@@ -11,7 +11,7 @@
     transition-duration: 200ms;
 }
 body{
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
     background-color: $fond;
     height: 100%;
@@ -207,12 +207,17 @@ article::-webkit-scrollbar{
             opacity: 0;
             z-index: 3;
         }
-        a:hover ~ .voile{width: 50%;
-            @media screen and (max-width: 1000px){width: 80%}
-            @media screen and (max-width: 600px){width: 100%}}
-        a:hover ~ .fond{background-size: 130%;}
-        a:hover ~ h2{transform: scale(1.2) translateX(8%) translateY(-0.2em);}
-        a:hover ~ p{transform: translateX(0);}
+        @media screen and (min-width: 1000px){
+            a:hover ~ .voile{width: 50%;}
+            a:hover ~ .fond{background-size: 130%;}
+            a:hover ~ h2{transform: scale(1.2) translateX(8%) translateY(-0.2em);}
+            a:hover ~ p{transform: translateX(0);}
+        }
+        @media screen and (max-width: 1000px){
+            .voile{width: 100%}
+            .fond{background-size: 130%;}
+            p{transform: translateX(0)}
+        }
         
       
 }
@@ -333,7 +338,8 @@ article::-webkit-scrollbar{
      rgba(0, 0, 0, 0.3) 80%);
     color: $gray;
 }
-
+.bgFullPurple{background:$purple}
+#darkMode:checked ~ .root .bgFullPurple{background:$orange}
 
 
 /* pj section */
