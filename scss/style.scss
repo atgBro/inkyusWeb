@@ -363,7 +363,6 @@ article::-webkit-scrollbar{
 
     .fab:hover, .fas:hover{
         
-        transform: scale(1.1);
         z-index: 4;
         ~ span:first-of-type{
             z-index: 10;
@@ -423,6 +422,13 @@ article::-webkit-scrollbar{
     $orange 10px,
     $drakGray 10px,
     $drakGray 20px);
+}
+/*Clipping*/
+.ClipHalfBlock{
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+.ClipVignette{
+    clip-path: polygon(100% 0, 100% 100%, 4vw 100%, 0 calc(100% - 4vw), 0 0);
 }
 /**/
 
