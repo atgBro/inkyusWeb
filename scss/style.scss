@@ -13,6 +13,11 @@
 body{
     width: 100vw;
     overflow-x: hidden;
+    background-color: $fond;
+    height: 100%;
+}
+#darkMode:checked ~ .root body{
+    background-color: $drakGray;
 }
 /* texte*/
 h1{
