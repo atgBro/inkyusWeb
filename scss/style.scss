@@ -94,7 +94,7 @@ strong{
     grid-template-areas:    "mn mn if pj"
                             "ct p1 p1 pj"
                             "p2 p2 p3 p3"
-                            "cc p4 p4 dd"
+                            "bt bt p4 p4"
 }
 @media screen and (max-width: 1000px){
     .container{
@@ -104,6 +104,7 @@ strong{
                                 "if ct"
                                 "p1 p2"
                                 "p3 p4"
+                                "bt bt"
     }
 }
 @media screen and (max-width: 600px){
@@ -114,6 +115,7 @@ strong{
                                 "if"
                                 "p1"
                                 "p2"
+                                "bt"
                                 "p3"
                                 "p4"
                                 "ct"
@@ -127,6 +129,7 @@ strong{
 .p2{grid-area: p2; z-index: 0;}
 .p3{grid-area: p3; z-index: 0;}
 .p4{grid-area: p4; z-index: 0;}
+.breath{grid-area: bt; z-index: 0;}
 /* structure article*/
 article{
     background-color: $white;
@@ -150,7 +153,9 @@ article::-webkit-scrollbar{
     box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.445);
 }
 /* structure projets*/
+#darkMode:checked ~ .root .projet{border-left: 1vw $orange solid;}
 .projet{
+    border-left: 1vw $purple solid;
     position: relative;
     $timeAnim: 800ms;    
         .fond{
@@ -405,7 +410,20 @@ article::-webkit-scrollbar{
 .bgDarkGray .userInfo img{
     border: 2px solid $purple;
 }
-
+.bg-hachure{
+    background: repeating-linear-gradient(45deg,
+    $purple,
+    $purple 10px,
+    $fond 10px,
+    $fond 20px);
+}
+#darkMode:checked ~ .root .bg-hachure{
+    background: repeating-linear-gradient(45deg,
+    $orange,
+    $orange 10px,
+    $drakGray 10px,
+    $drakGray 20px);
+}
 /**/
 
 
@@ -428,11 +446,7 @@ article::-webkit-scrollbar{
 }
 .pj{
     @media screen and (max-width: 1000px){display: none;}
-    background: repeating-linear-gradient(45deg,
-    $purple,
-    $purple 10px,
-    $fond 10px,
-    $fond 20px);
+
     .skill{
         margin: 0.5vw;
         padding: 0.5vw;
@@ -448,12 +462,8 @@ article::-webkit-scrollbar{
     // }
 }
 #darkMode:checked ~ .root .pj{
-    background: repeating-linear-gradient(45deg,
-    $orange,
-    $orange 10px,
-    $drakGray 10px,
-    $drakGray 20px);
     .skill{
         background-color: $drakGray;
     }
 }
+
