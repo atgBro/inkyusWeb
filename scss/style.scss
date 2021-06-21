@@ -15,6 +15,10 @@
     overflow-x: hidden;
     height: 100%;
 }
+.wrapper{
+    position: fixed;
+}
+html{overflow-x:hidden}
 .bg{    background-color: $fond;}
 #darkMode:checked ~ .bg{
     background-color: $drakGray;

@@ -210,6 +210,14 @@ nav .burger a:hover {
   height: 100%;
 }
 
+.wrapper {
+  position: fixed;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 .bg {
   background-color: #e6ebec;
 }
