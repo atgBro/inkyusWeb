@@ -207,6 +207,12 @@ nav .burger a:hover {
 body {
   width: 100vw;
   overflow-x: hidden;
+  background-color: #e6ebec;
+  height: 100%;
+}
+
+#darkMode:checked ~ .root body {
+  background-color: #201a2b;
 }
 
 /* texte*/
