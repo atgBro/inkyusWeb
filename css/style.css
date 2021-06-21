@@ -446,6 +446,10 @@ article {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+  /* ConcreteBlock */
+  border-radius: 2px;
+  margin: 5px;
+  /* /ConcreteBlock */
 }
 
 article::-webkit-scrollbar {

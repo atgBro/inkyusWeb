@@ -136,6 +136,11 @@ article{
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+
+    /* ConcreteBlock */
+    border-radius: 2px;
+    margin: 5px;
+    /* /ConcreteBlock */
 }
 article::-webkit-scrollbar{
     display: none; /* for Chrome, Safari and Opera */
@@ -325,6 +330,7 @@ article::-webkit-scrollbar{
 .pj{
     
     position: relative;
+
     .fab, .fas{
         margin: 3px;
         color:$purple;
