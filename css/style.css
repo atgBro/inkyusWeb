@@ -213,8 +213,14 @@ body {
 h1 {
   font-family: 'Staatliches', cursive;
   text-transform: uppercase;
-  font-size: 4em;
+  font-size: 4.5vw;
   color: #9131ff;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    _font-size: 3em;
+  }
 }
 
 #darkMode:checked ~ .root h1 {
@@ -714,9 +720,8 @@ article::-webkit-scrollbar {
 /**/
 .bgPurple {
   background-color: #9131ff;
-  background-image: url("../images/bg-pattern-quotation.svg");
-  background-repeat: no-repeat;
-  background-position-x: right 20%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #9131ff), color-stop(80%, rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(180deg, #9131ff 80%, rgba(255, 255, 255, 0.3) 80%);
   color: white;
 }
 
@@ -726,6 +731,8 @@ article::-webkit-scrollbar {
 
 #darkMode:checked ~ .root .bgPurple {
   background-color: #ffb71c;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, #ffb71c), color-stop(80%, rgba(0, 0, 0, 0.3)));
+  background: linear-gradient(180deg, #ffb71c 80%, rgba(0, 0, 0, 0.3) 80%);
   color: #241c2e;
 }
 
@@ -738,8 +745,8 @@ article::-webkit-scrollbar {
   margin: 3px;
   color: #9131ff;
   font-size: 5vw;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
+  -webkit-transition-duration: 600ms;
+          transition-duration: 600ms;
 }
 
 .pj .fab + span, .pj .fas + span {
@@ -750,7 +757,6 @@ article::-webkit-scrollbar {
   color: white;
   width: 100%;
   text-align: center;
-  z-index: 10;
   margin: 10px 0 10px 0;
   font-weight: bold;
   -webkit-transition-duration: 1s;
@@ -760,9 +766,19 @@ article::-webkit-scrollbar {
 .pj .fab:hover, .pj .fas:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  z-index: 4;
 }
 
 .pj .fab:hover ~ span:first-of-type, .pj .fas:hover ~ span:first-of-type {
+  z-index: 10;
+  display: block;
+  opacity: 1;
+  position: absolute;
+  top: 20px;
+  background-color: #9131ff;
+}
+
+.pj span:hover {
   display: block;
   opacity: 1;
   position: absolute;
@@ -807,4 +823,48 @@ article::-webkit-scrollbar {
 }
 
 /**/
+.mn {
+  background-color: transparent;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) calc(20px + 3vh + 4.6vw), white calc(20px + 3vh + 4.6vw), white 95%, #9131ff 95%);
+}
+
+#darkMode:checked ~ .root .mn {
+  background-color: transparent;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) calc(20px + 3vh + 4.6vw), #201a2b calc(20px + 3vh + 4.5vw), #201a2b 95%, #ffb71c 95%);
+}
+
+.pj {
+  background: repeating-linear-gradient(45deg, #9131ff, #9131ff 10px, #e6ebec 10px, #e6ebec 20px);
+}
+
+@media screen and (max-width: 1000px) {
+  .pj {
+    display: none;
+  }
+}
+
+.pj .skill {
+  margin: 0.5vw;
+  padding: 0.5vw;
+  background-color: #e6ebec;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#darkMode:checked ~ .root .pj {
+  background: repeating-linear-gradient(45deg, #ffb71c, #ffb71c 10px, #201a2b 10px, #201a2b 20px);
+}
+
+#darkMode:checked ~ .root .pj .skill {
+  background-color: #201a2b;
+}
 /*# sourceMappingURL=style.css.map */

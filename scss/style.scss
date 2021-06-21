@@ -18,9 +18,10 @@ body{
 h1{
     font-family: 'Staatliches', cursive;
     text-transform: uppercase;
-    font-size: 4em;
+    font-size: 4.5vw;
     color: $purple;
 }
+@media screen and (max-width:800px){h1{_font-size: 3em;}}
 #darkMode:checked ~ .root h1{ color: $orange};
 p{
     font-size: 0.8em;
@@ -312,9 +313,9 @@ article::-webkit-scrollbar{
 /**/
 .bgPurple{
     background-color: $purple;
-    background-image: url("../images/bg-pattern-quotation.svg");
-    background-repeat: no-repeat;
-    background-position-x: right 20%;
+    background: linear-gradient(180deg,
+     $purple 80%,
+     rgba(255, 255, 255, 0.3) 80%);
     color: $white;
 }
 .bgPurple .lightText{
@@ -322,8 +323,13 @@ article::-webkit-scrollbar{
 }
 #darkMode:checked ~ .root .bgPurple{
     background-color: $orange;
+    background: linear-gradient(180deg,
+     $orange 80%,
+     rgba(0, 0, 0, 0.3) 80%);
     color: $gray;
 }
+
+
 
 /* pj section */
 
@@ -335,7 +341,7 @@ article::-webkit-scrollbar{
         margin: 3px;
         color:$purple;
         font-size: 5vw;
-        transition-duration: 300ms;
+        transition-duration: 600ms;
         + span{
             opacity: 0;
             position: absolute;
@@ -344,22 +350,31 @@ article::-webkit-scrollbar{
             color: $white;
             width: 100%;
             text-align: center;
-            z-index: 10;
             margin: 10px 0 10px 0;
             font-weight: bold;
             transition-duration: 1s;
         }
     }
+
     .fab:hover, .fas:hover{
         
         transform: scale(1.1);
+        z-index: 4;
         ~ span:first-of-type{
+            z-index: 10;
             display:block;
             opacity: 1;
             position: absolute;
             top:20px;
             background-color: $purple;  
         }
+    }
+    span:hover{
+        display:block;
+        opacity: 1;
+        position: absolute;
+        top:20px;
+        background-color: $purple;
     }
 }
 #darkMode:checked ~ .root{
@@ -390,4 +405,55 @@ article::-webkit-scrollbar{
 .bgDarkGray .userInfo img{
     border: 2px solid $purple;
 }
+
 /**/
+
+
+.mn{
+    
+ background-color: transparent;
+ background: linear-gradient(180deg,
+  rgba(255, 255, 255, 0.3) calc(20px + 3vh + 4.6vw),
+   $white calc(20px + 3vh + 4.6vw),
+   $white 95%,
+   $purple 95%);
+}
+#darkMode:checked ~ .root .mn{
+    background-color: transparent;
+    background: linear-gradient(180deg,
+     rgba(0, 0, 0, 0.3) calc(20px + 3vh + 4.6vw),
+        $drakGray calc(20px + 3vh + 4.5vw),
+        $drakGray 95%,
+        $orange 95%);
+}
+.pj{
+    @media screen and (max-width: 1000px){display: none;}
+    background: repeating-linear-gradient(45deg,
+    $purple,
+    $purple 10px,
+    $fond 10px,
+    $fond 20px);
+    .skill{
+        margin: 0.5vw;
+        padding: 0.5vw;
+        background-color: $fond ;
+        transform: rotate(45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    // Trigger "bug
+    // .fab, .fas{
+    //     transform: rotate(-90deg);
+    // }
+}
+#darkMode:checked ~ .root .pj{
+    background: repeating-linear-gradient(45deg,
+    $orange,
+    $orange 10px,
+    $drakGray 10px,
+    $drakGray 20px);
+    .skill{
+        background-color: $drakGray;
+    }
+}
