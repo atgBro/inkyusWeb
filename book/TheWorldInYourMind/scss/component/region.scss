@@ -1,0 +1,11 @@
+// FIXED // REGION
+#region{
+    grid-area: rg;
+    margin: 5vh;
+    @media screen and (max-width:850px){
+        margin: 0vh 0vh 5vh 0vh;
+    }
+    @media screen and (max-height:500px){
+        margin: 0vh 0vh 5vh 0vh;
+    }
+}

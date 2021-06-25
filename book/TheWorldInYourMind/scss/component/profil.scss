@@ -1,0 +1,50 @@
+// FIXED // PROFIL
+#profil{
+    
+    grid-area: pf;
+    margin: 5vh;
+    >div{
+        position: relative;
+        background: 
+        linear-gradient(90deg, orangered 7.5vh, transparent 7.5vh),
+        linear-gradient(315deg, orangered 7.5vh, transparent 7.5vh),
+        $fond;
+    }
+    .photo{
+        position: absolute;
+        height: 15vh;
+        width: 15vh;
+        top: 0;
+        left: 0;
+        border: orangered solid 2px;
+        background-color: $primary;
+        transform: rotate(45deg);
+        > img{transform: rotate(-45deg);}
+    }
+    .name{
+        width: 100%;
+        height: calc(7.5vh - 15px);
+        border-bottom: orangered solid 2px;
+        *{margin:0;transform:translateY(-10px); }
+        h3{padding-left:15vh;background-color:orangered;color:$primary;}
+        p{padding-left:17vh;;color:orangered;}
+    }
+    > div > h3{margin:0 0 0 17vh;color:orangered;}
+    @media screen and (max-width:850px) and (min-height:300px){
+        
+        margin: 0 0 5vh 0;
+        >div{width: auto;}
+    }
+    @media screen and (max-height:500px) and (min-width:600px){// horizontale
+        
+        
+        >div{padding-top: 0;width: auto;height: calc(100%);}
+        .name {justify-content: space-around;
+            *{transform:translateY(0px);width: 100%;}
+            height: calc(7.5vh);
+            p{padding-left:2vh;}
+            ;
+        }
+        margin: 0 0 5vh 0;
+    }
+}

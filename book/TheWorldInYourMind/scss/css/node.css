@@ -1,0 +1,66 @@
+#node {
+  grid-area: nd;
+  margin: 5vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: 40% 60%;
+      grid-template-rows: 40% 60%;
+      grid-template-areas: "nd-art" "nd-ctt";
+}
+
+@media screen and (max-width: 850px) {
+  #node {
+    margin: 2vh;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #node {
+    -ms-grid-rows: 25% 75%;
+        grid-template-rows: 25% 75%;
+  }
+}
+
+#node .art {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: nd-art;
+  background: url("../img/nodes/npc-weirdChild01.png") left bottom no-repeat, url("../img/nodes/city-mysticVillage01.png") right bottom no-repeat, url("../img/nodes/region-mountain01.png") right bottom no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, orangered));
+  background: url("../img/nodes/npc-weirdChild01.png") left bottom no-repeat, url("../img/nodes/city-mysticVillage01.png") right bottom no-repeat, url("../img/nodes/region-mountain01.png") right bottom no-repeat, linear-gradient(180deg, transparent 50%, orangered 50%);
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#node .art h2 {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: #1a1c33;
+  text-shadow: 2px 0 0 orangered, -2px 0 0 orangered, 0 2px 0 orangered, 0 -2px 0 orangered, 1px 1px orangered, -1px -1px 0 orangered, 1px -1px 0 orangered, -1px 1px 0 orangered;
+  margin-left: 20%;
+}
+
+#node .content {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: nd-ctt;
+}
+
+#node .content > div {
+  overflow-y: scroll;
+}
+
+.txtNodeNarration {
+  background-color: #262949;
+  border-radius: 1em;
+  padding: 0.5em;
+  font-size: 0.8em;
+}
+
+.tagNodeSmiley {
+  font-size: 0.5em;
+}
+/*# sourceMappingURL=node.css.map */

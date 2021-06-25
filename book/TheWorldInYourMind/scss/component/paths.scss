@@ -1,0 +1,37 @@
+@import "../abstract/colors";
+// RELATIVE // PATHS
+#paths{
+    grid-area: pt;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    > div{flex-basis: 100%;}
+    margin: 0vh 4vh 4vh 4vh;
+    @media screen and (max-width:850px) and (min-height:300px){// verticale
+        margin: 0 1vh 1vh 1vh;}
+    > div{
+        margin: 0vh 1vh 2.5vh 1vh;
+        @media screen and (max-height:500px) and (min-width:600px){
+            margin-bottom: 4vh;
+        }
+        display: flex;
+        position: relative;
+        .pathLogo{
+            position: absolute;
+            bottom: -14px;
+            left: 5%;
+            display: flex;
+            *{
+                margin: 0 4px 0 0;
+                font-size: 14px;
+                color: orangered;
+                text-shadow: 3px 0 0 $fond, -3px 0 0 $fond, 0 3px 0 $fond, 0 -3px 0 $fond, 1.5px 1.5px $fond, -1.5px -1.5px 0 $fond, 1.5px -1.5px 0 $fond, -1.5px 1.5px 0 $fond;
+            }  
+        }
+    }
+}
+.path{transform: translateX(0); transition-duration: 300ms;}
+.path:hover{transform: translateX(4px);}
+.txtPathNodeName{
+    color: orangered;
+}

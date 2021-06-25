@@ -1,0 +1,140 @@
+@import "./abstract/colors";
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
+//components
+@import "./component/profil.scss";
+@import "./component/node.scss";
+@import "./component/paths.scss";
+@import "./component/outilMenu.scss";
+@import "./component/region.scss";
+
+
+body {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $fond;
+}
+a{
+    text-decoration: none;
+}
+.wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+// MASK & Adjustement
+@media screen and (max-width:850px){// verticale
+    .pc{display: none;}
+}
+@media screen and (max-height:500px) and (min-width:600px){// horizontale
+    .pc{display: none;}
+    .flexMh{display: flex;}
+}
+@media screen and (min-width:850px){
+    .mobile{display: none;}
+}
+@media screen and (min-height:500px) and (min-width:600px){
+    .mobile{display: none;}
+}
+.hidden{display: none;}
+// GRID
+.fixedScreen, .scroolScreen{
+    display: grid;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    grid-template-columns: 25vw 25vw 25vw 25vw ;
+    grid-template-rows: 25vh 25vh 25vh 25vh ;
+    grid-template-areas: 
+    "pf nd nd rg"
+    "pf nd nd if"
+    "li pt pt if"
+    "li pt pt if"
+    ;
+    @media screen and (max-width:850px) and (min-height:300px){ // verticale
+        grid-template-columns: 25vw 25vw 25vw 25vw ;
+        grid-template-rows: 15vh 20vh 20vh 20vh 30vh;
+        grid-template-areas: 
+        "pf pf pf rg"
+        "li nd nd nd"
+        "li nd nd nd"
+        "if pt pt pt"
+        "if pt pt pt"
+        ;
+    }
+    @media screen and (max-height:500px) and (min-width:600px){ // horizontale
+        grid-template-columns: 15% 17% 17% 17% 17% 17% ;
+        grid-template-rows: 15vh 25vh 25vh 35vh ;
+        grid-template-areas: 
+        "pf pf pf if if rg"
+        "li nd nd nd pt pt"
+        "li nd nd nd pt pt"
+        "li nd nd nd pt pt"
+        ;
+    }
+}
+.fixedScreen{
+    position: fixed;
+    height: 100vh;
+    z-index: 2;
+    
+}
+// ART DESIGN // GENERALE
+*{color:rgb(217, 231, 238);font-family: Arial, Helvetica, sans-serif;
+    @media screen and (max-width:400px){font-size: 4vw;}
+}
+.whMax{
+    width:  calc(100% - 16px);
+    height: calc(100% - 16px);
+}
+.card{
+    border-radius: 10px;
+    padding: 10px 14px 10px 14px;
+    border: orangered 1px solid;
+}
+.cardMobile{
+    @media screen and (max-width:850px){
+        border-radius: 0;}
+    @media screen and (max-height:500px){
+        border-radius: 0;}
+}
+.bgLosange{
+    background: 
+             repeating-linear-gradient(45deg,$fond 0px, $fond 1px, transparent 1px, transparent 2px)
+            ,repeating-linear-gradient(135deg,$fond 0px, $fond 1px, transparent 1px, transparent 2px)
+            ,linear-gradient(45deg, $primary 0%, $fond 100%)
+            ;
+}
+.bgLosangeBig{
+    background: 
+             repeating-linear-gradient(45deg,$fond 0px, $fond 1px, transparent 2px, transparent 5px)
+            ,repeating-linear-gradient(135deg,$fond 0px, $fond 1px, transparent 2px, transparent 5px)
+            ,linear-gradient(45deg, $primary 0%, $fond 100%)
+            ;
+}
+.bgQuadrillage{
+    $backgroundPattern:
+    linear-gradient(135deg, rgba(255, 68, 0, 0.2) 0%,rgba(255, 68, 0, 0.2) 15%, transparent 16%),
+    linear-gradient(45deg, transparent 0%, $fond 100%),
+    repeating-linear-gradient(45deg,transparent 0px,transparent 4px,$fond 4px, $fond 7px, transparent 7px, transparent 10px),
+    repeating-linear-gradient(135deg,transparent 0px,transparent 4px,$fond 4px, $fond 7px, transparent 7px, transparent 10px),
+    repeating-linear-gradient(45deg,orangered 0px, orangered 1px, transparent 1px, transparent 10px),
+    repeating-linear-gradient(135deg,orangered 0px, orangered 1px, transparent 1px, transparent 10px),
+    linear-gradient(135deg, rgba(255, 68, 0, 0.5) 0%,rgba(255, 68, 0, 0.5) 30%, $fond 31%);
+    background: 
+    url("../img/nodes/bordurePCright.png") right top no-repeat, 
+    url("../img/nodes/bordurePCleft.png") left bottom no-repeat  
+    ,$backgroundPattern;
+    @media screen and (max-width:850px){
+        background:$backgroundPattern;}
+    @media screen and (max-height:500px){
+        background:$backgroundPattern;}
+    background-size:contain;
+    background-attachment: fixed;
+}
+
+
+
+

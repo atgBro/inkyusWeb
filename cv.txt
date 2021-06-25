@@ -1,0 +1,52 @@
+CATCH PHRASE
+
+Sérieux et motivé je suis passionné par le web depuis mes premiers pas dans le monde professionnel. Après plusieurs années de travaille en tant que graphiste je recherche une société à qui faire profiter cette passion en tant que développeur web. 
+
+Autonome je suis habitué à apprendre en autodidacte et effectuer une veille constante de l'évolution des technologies du web et du mobile.
+
+COMPÉTENCES
+DÉVELOPPEUR
+
+    (form) Html/Css
+    (form) Javascript
+    (auto) typeScript
+    (info) Python
+    (form) MySQL
+    (form) PHP
+    (auto) C# (via Unity)
+    (form) Symfony
+    (form) Bootstrap
+    (form) WordPress
+
+GRAPHISTE
+
+    (info) Photoshop
+    (info) Illustrator
+    (info) InDesign
+    (info) Blender
+
+AUTRES
+
+    (auto) Anglais
+    (info) Gestion de projets
+    (othe) Vente/conseil
+    (othe) Imprimerie
+    (othe) Barista
+
+PASSIONS
+
+    Peinture
+    Linogravure
+    GameDesign
+    Randonnée
+
+
+//
+Compétences large (donné)
+
+Analyse des besoins du client
+Participation à l’élaboration du cahier des charges
+Phase de développement web : conception d’un site web ou d’une application
+Contrôle qualité : réalisation de différents tests, correction des bugs éventuels
+Livraison au client
+Suivi technique et maintenance du site internet ou de l’application web en fonction des besoins.

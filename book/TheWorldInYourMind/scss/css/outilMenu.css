@@ -1,0 +1,253 @@
+[type="radio"] {
+  opacity: 0;
+  z-index: 4;
+}
+
+#outil {
+  grid-area: if;
+}
+
+#outil > * {
+  position: fixed;
+}
+
+#outil [type="radio"].m1, #outil .menu1Btn {
+  height: 7vh;
+  width: 7vh;
+  top: 25vh;
+  right: 5vh;
+  bottom: auto;
+  left: auto;
+}
+
+#outil [type="radio"].m2, #outil .menu2Btn {
+  height: 7vh;
+  width: 7vh;
+  top: 40vh;
+  right: 5vh;
+  bottom: auto;
+  left: auto;
+}
+
+#outil [type="radio"].m3, #outil .menu3Btn {
+  height: 7vh;
+  width: 7vh;
+  top: 55vh;
+  right: 5vh;
+  bottom: auto;
+  left: auto;
+}
+
+@media screen and (max-width: 850px) and (min-height: 300px) {
+  #outil [type="radio"].m1, #outil .menu1Btn {
+    height: 7vh;
+    width: 7vh;
+    bottom: 10vh;
+    left: calc(12.5vw - 3.5vh);
+    top: auto;
+    right: auto;
+  }
+  #outil [type="radio"].m2, #outil .menu2Btn {
+    height: 7vh;
+    width: 7vh;
+    bottom: 20vh;
+    left: calc(12.5vw - 3.5vh);
+    top: auto;
+    right: auto;
+  }
+  #outil [type="radio"].m3, #outil .menu3Btn {
+    height: 7vh;
+    width: 7vh;
+    bottom: 30vh;
+    left: calc(12.5vw - 3.5vh);
+    top: auto;
+    right: auto;
+  }
+}
+
+@media screen and (max-height: 500px) and (min-width: 600px) {
+  #outil [type="radio"].m1, #outil .menu1Btn {
+    height: 10vh;
+    width: 10vh;
+    top: 2vh;
+    left: 50vw;
+    bottom: auto;
+    right: auto;
+  }
+  #outil [type="radio"].m2, #outil .menu2Btn {
+    height: 10vh;
+    width: 10vh;
+    top: 2vh;
+    left: 60vw;
+    bottom: auto;
+    right: auto;
+  }
+  #outil [type="radio"].m3, #outil .menu3Btn {
+    height: 10vh;
+    width: 10vh;
+    top: 2vh;
+    left: 70vw;
+    bottom: auto;
+    right: auto;
+  }
+}
+
+#menu {
+  grid-area: li;
+}
+
+#menu > * {
+  position: fixed;
+}
+
+#menu [type="radio"].m1, #menu .menu1Btn {
+  height: 7vh;
+  width: 7vh;
+  top: 55vh;
+  left: 5vh;
+  bottom: auto;
+  right: auto;
+}
+
+#menu [type="radio"].m2, #menu .menu2Btn {
+  height: 7vh;
+  width: 7vh;
+  top: 65vh;
+  left: 5vh;
+  bottom: auto;
+  right: auto;
+}
+
+#menu [type="radio"].m3, #menu .menu3Btn {
+  height: 7vh;
+  width: 7vh;
+  top: 75vh;
+  left: 5vh;
+  bottom: auto;
+  right: auto;
+}
+
+@media screen and (max-width: 850px) and (min-height: 300px) {
+  #menu [type="radio"].m1, #menu .menu1Btn {
+    height: 7vh;
+    width: 7vh;
+    top: 20vh;
+    left: calc(12.5vw - 3.5vh);
+    bottom: auto;
+    right: auto;
+  }
+  #menu [type="radio"].m2, #menu .menu2Btn {
+    height: 7vh;
+    width: 7vh;
+    top: 30vh;
+    left: calc(12.5vw - 3.5vh);
+    bottom: auto;
+    right: auto;
+  }
+  #menu [type="radio"].m3, #menu .menu3Btn {
+    height: 7vh;
+    width: 7vh;
+    top: 40vh;
+    left: calc(12.5vw - 3.5vh);
+    bottom: auto;
+    right: auto;
+  }
+}
+
+@media screen and (max-height: 500px) and (min-width: 600px) {
+  #menu [type="radio"].m1, #menu .menu1Btn {
+    height: 10vh;
+    width: 10vh;
+    bottom: 5vh;
+    left: 2.5vw;
+    top: auto;
+    right: auto;
+  }
+  #menu [type="radio"].m2, #menu .menu2Btn {
+    height: 10vh;
+    width: 10vh;
+    bottom: 20vh;
+    left: 2.5vw;
+    top: auto;
+    right: auto;
+  }
+  #menu [type="radio"].m3, #menu .menu3Btn {
+    height: 10vh;
+    width: 10vh;
+    bottom: 35vh;
+    left: 2.5vw;
+    top: auto;
+    right: auto;
+  }
+}
+
+#outil .menu, #menu .menu {
+  height: 80vh;
+  width: 80vw;
+  top: 10vh;
+  left: 10vw;
+  z-index: -10;
+}
+
+#outil [type="radio"]:checked, #menu [type="radio"]:checked {
+  z-index: 12;
+  position: fixed;
+  z-index: 11;
+}
+
+#outil [type="radio"]:checked.m1 ~ .menu1Btn, #menu [type="radio"]:checked.m1 ~ .menu1Btn {
+  background-color: orangered;
+}
+
+#outil [type="radio"]:checked.m1 ~ .m1, #menu [type="radio"]:checked.m1 ~ .m1 {
+  background-color: #1a1c33;
+  border: orangered 2px solid;
+  display: block;
+  z-index: 4;
+}
+
+#outil [type="radio"]:checked.m2 ~ .menu2Btn, #menu [type="radio"]:checked.m2 ~ .menu2Btn {
+  background-color: orangered;
+}
+
+#outil [type="radio"]:checked.m2 ~ .m2, #menu [type="radio"]:checked.m2 ~ .m2 {
+  background-color: #1a1c33;
+  border: orangered 2px solid;
+  display: block;
+  z-index: 4;
+}
+
+#outil [type="radio"]:checked.m3 ~ .menu3Btn, #menu [type="radio"]:checked.m3 ~ .menu3Btn {
+  background-color: orangered;
+}
+
+#outil [type="radio"]:checked.m3 ~ .m3, #menu [type="radio"]:checked.m3 ~ .m3 {
+  background-color: #1a1c33;
+  border: orangered 2px solid;
+  display: block;
+  z-index: 4;
+}
+
+.btn {
+  background-color: #1a1c33;
+  border: orangered 2px solid;
+}
+
+[type="radio"].closeradio {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  height: 5vh;
+  width: 5vh;
+  opacity: 1;
+}
+
+[type="radio"].closeradio:not(:checked) {
+  top: 10vh;
+  left: auto;
+  right: 10vw;
+}
+/*# sourceMappingURL=outilMenu.css.map */

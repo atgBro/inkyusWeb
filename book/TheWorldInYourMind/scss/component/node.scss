@@ -1,0 +1,52 @@
+@import "../abstract/colors";
+// FIXED // NODE
+#node{
+    grid-area: nd;   
+    margin: 5vh;
+    @media screen and (max-width:850px){
+        margin: 2vh;
+    }
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 40% 60%;
+    @media screen and (max-width:850px){
+        grid-template-rows: 25% 75%;
+    }
+    grid-template-areas: 
+    "nd-art"
+    "nd-ctt";
+    .art{
+        grid-area: nd-art;
+        background: 
+        url("../img/nodes/npc-weirdChild01.png") left bottom no-repeat,
+        url("../img/nodes/city-mysticVillage01.png") right bottom no-repeat,
+        url("../img/nodes/region-mountain01.png") right bottom no-repeat,
+        linear-gradient(180deg, transparent 50%,orangered 50%);
+        background-size:contain;
+        display: flex;
+        h2{
+            align-self: flex-end;
+            color: $fond;
+            text-shadow: 2px 0 0 orangered, -2px 0 0 orangered, 0 2px 0 orangered, 0 -2px 0 orangered, 1px 1px orangered, -1px -1px 0 orangered, 1px -1px 0 orangered, -1px 1px 0 orangered;
+            margin-left: 20%;
+        }
+    }
+    .content{
+        grid-area: nd-ctt;
+        >div{
+            overflow-y: scroll;
+        }
+    }
+}
+.txtNodeNarration{
+    background-color: $primary;
+    border-radius: 1em;
+    padding:0.5em;
+    font-size: 0.8em;
+}
+.txtNodeDialogue{
+
+}
+.tagNodeSmiley{
+    font-size: 0.5em;
+}
