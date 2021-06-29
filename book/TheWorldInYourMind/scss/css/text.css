@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Reenie+Beanie&family=Shadows+Into+Light+Two&display=swap");
+* {
+  font-family: 'Lora', serif;
+  font-size: 4vh;
+}
+
+@media screen and (min-height: 100vw) {
+  * {
+    font-size: 4vw;
+  }
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+p.talk {
+  font-size: 2vh;
+  margin: 3vh;
+  padding: 2vh;
+  border: solid black 1px;
+}
+
+p.talk.me {
+  border-radius: 2vh 0 2vh 2vh;
+}
+
+p.talk.npc {
+  border-radius: 0 2vh 2vh 2vh;
+}
+
+p.narrator {
+  font-size: 2vh;
+  margin: 3vh;
+}
+
+p .annotation {
+  font-family: 'Reenie Beanie', cursive;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-transform: translate(30%, 10%) rotate(-40deg);
+          transform: translate(30%, 10%) rotate(-40deg);
+}
+/*# sourceMappingURL=text.css.map */

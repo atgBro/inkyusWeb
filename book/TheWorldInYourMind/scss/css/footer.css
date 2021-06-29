@@ -1,0 +1,15 @@
+footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 17vh auto 17vh;
+      grid-template-columns: 17vh auto 17vh;
+      grid-template-areas: "1 2 3";
+}
+
+@media screen and (min-height: 100vw) {
+  footer {
+    -ms-grid-columns: 17vw auto 17vw;
+        grid-template-columns: 17vw auto 17vw;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

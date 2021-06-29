@@ -1,0 +1,29 @@
+header{
+    display: grid;
+    grid-template-columns: 17vh auto 17vh 17vh ;
+    grid-template-rows: 17vh;
+    grid-template-areas: "a b c d";
+    @media screen and (min-height: 100vw){ //verticale
+        grid-template-columns: 17vw auto 17vw 17vw ;
+        grid-template-rows: 17vw;
+    }
+
+    .a{grid-area:a; border-right: $border;}
+    .b{grid-area:b; border-right: $border;}
+    .c{grid-area:c; border-right: $border; background: $bgDiagonale;}
+    .d{grid-area:d;}
+    .a img{
+        height: 100%;
+        width: 100%;
+    }
+    .b{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 50%;
+        grid-template-areas: "a""b";
+    }
+    .b > div:nth-child(1) {grid-area: a; border-bottom: $border;}
+    .b > div:nth-child(2) {grid-area: b;}
+    .b > div{padding:1vh}
+
+}

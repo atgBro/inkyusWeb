@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAAA,OAAO,AAAA,CACH,SAAS,CAAE,EAAE,CACb,MAAM,CAAE,GAAG,CAOd,AANG,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK,EAHvC,AAAA,OAAO,AAAA,CAIC,MAAM,CAAE,eAAe,CAK9B,CAHG,MAAM,CAAC,MAAM,MAAM,UAAU,EAAE,KAAK,EANxC,AAAA,OAAO,AAAA,CAOC,MAAM,CAAE,eAAe,CAE9B",
-    "sources": [
-        "../component/region.scss"
-    ],
-    "names": [],
-    "file": "region.min.css"
-}
