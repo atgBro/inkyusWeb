@@ -637,10 +637,10 @@ article::-webkit-scrollbar {
 
 .p4 .fond {
   background-color: white;
-  background-image: url(../images/holygin.png);
-  background-size: 340%;
+  background-image: url(../images/prjAvenir.PNG);
+  background-size: 180%;
   background-position-x: 40%;
-  background-position-y: 20%;
+  background-position-y: 40%;
 }
 
 .p4 a:hover ~ .fond {
