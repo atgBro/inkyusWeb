@@ -18,12 +18,16 @@ rêgles:
     écriture:
         give=badge1_1_100,badge2_1_50
     donne le badge badge1 a 100% de chance, donne le badge badge2 à 50% de chance.
+    path => effet a la prise du chemin
+    node => effet a l'arrivé sur le chemin
     
 ---------> prise de badge (name:take) /Path/Node
     
     écriture:
         take=badge1_1_100,badge2_2_50
     prend le badge badge1 a 100% de chance, donne le badge badge2 à 50% de chance.
+    path => effet a la prise du chemin
+    node => effet a l'arrivé sur le chemin
 
 ---------> nécessaire pour voir le chemin(name:needToSee) /Path
     
