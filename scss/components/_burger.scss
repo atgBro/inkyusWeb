@@ -1,0 +1,106 @@
+@import "../abstracts/colors";
+
+
+/* --- NAV BURGER --- */
+nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width:  50px;
+    background-color: $gray;
+    color: $white;
+    z-index: 1;
+    a p{
+        margin: 0 5px 0 5px;
+        font-size: 1em;
+    }
+    input{
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: scale(3.5);
+        margin-right: 20px;
+        margin-top: 20px;
+        z-index: 6;
+        background-color: $gray;
+        opacity: 0;
+    }   
+    input:checked ~ .burger {
+        right: 0;
+    }
+    span{
+
+        position: fixed;
+        top: 5px;
+        right: 5px;
+ 
+    }
+    span:nth-of-type(1){
+        width: 40px;
+        height: 0px;
+        border-top: 20px dotted $white;
+        border-bottom: 20px dotted $white;
+        border-right: 0px solid $white;
+        border-left: 0px solid $white;
+        z-index: 4;
+        transition-duration: 300ms;
+    }
+    span:nth-of-type(2){
+        width: 40px;
+        height: 0px;
+        top: 25px;
+        border-top: 0px dotted rgba(48, 48, 48, 0);
+        border-bottom: 0px dotted rgba(48, 48, 48, 0);
+        border-right: 0px solid $white;
+        border-left: 0px solid $white;
+        z-index: 5;
+        transition-duration: 300ms;
+    }
+    input:hover ~ span:nth-of-type(2){
+        top: 5px;
+        border-top: 20px dotted $purple;
+        border-bottom: 20px dotted $purple;
+        border-right: 0px solid $white;
+        border-left: 0px solid $white;
+    }
+    input:checked:hover ~ span:nth-of-type(2) {
+        border-radius: 20px;
+        height: 20px;
+        width: 20px;
+        border: 10px solid $purple;
+
+    }
+    input:checked ~ span:nth-of-type(1) {
+        border-radius: 20px;
+        height: 20px;
+        width: 20px;
+        border: 10px solid $white;
+
+    }
+    input:hover ~ span:nth-of-type(1){transform: scale(1.1); border-color: $orange;}
+    .burger{
+        position: fixed;
+        top: 0px;
+        right: -40vw;
+        padding-top: 60px;
+        height: 100%;
+        width: 40vw;
+        background-color: $gray;
+        z-index: 2;
+        a{
+            color: $white;
+            text-decoration: none;
+            padding: 15px;
+            border-top: 2px transparent inset;
+            border-bottom: 2px transparent inset;
+        }
+        a:hover{
+            border-top: 2px $white inset;
+            border-bottom: 2px $white inset;
+            z-index: 8;
+            
+        }
+        transition-duration: 600ms;
+    }
+}

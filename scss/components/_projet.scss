@@ -1,0 +1,80 @@
+/* GRID*/
+.container.CProjets{
+    padding: 10vw 10vw 10vw 10vw;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
+    grid-template-areas:    "mn mn mn if"
+                            "ct ct pt pt"
+                            "ct ct pt pt" 
+                            "bt bt bt bt";
+}
+@media screen and (max-width: 1000px){
+    .container.CProjets{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas:    "mn if"
+                                "ct ct"  
+                                "ct ct"
+                                "pt pt"
+                                "bt bt"
+    }
+}
+@media screen and (max-width: 600px){
+    .container.CProjets{
+        grid-template-columns: 90%;
+        grid-template-rows: auto;
+        grid-template-areas:    "mn"
+                                "if"
+                                "ct"
+                                "ct"
+                                "ct"
+                                "pt"
+                                "pt"
+                                "bt"
+    }
+}
+.mn{grid-area: mn; z-index: 0;}
+.if{grid-area: if; z-index: -1;}
+.projetWrapper{grid-area: ct; z-index: 0;}
+.pict{grid-area: pt; z-index: 0;
+    aspect-ratio: 1/1;
+}
+.projetWrapper{
+    display:flex;
+    flex-direction: column;
+    .linkToProject{
+    padding: 1vh;
+    margin:1vh;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    &:hover{margin-left: 2vh;margin-right: 2vh;}
+    &:active{margin-left: 4vh;margin-right: 4vh;}
+    }
+    p {
+        margin-top: 2vh;
+        font-size: 0.8em;
+    }
+}
+
+.projetsWrapper{grid-area: pp; z-index: 0;}
+
+.breath{grid-area: bt; z-index: 0;}
+
+.backToHome{
+    position: absolute;
+    top: 30vh;
+    left: 7vw;
+    &:hover{left: calc(7vw - 5px);}
+    &:active{left: calc(7vw - 10px)}
+    height: 4vh;
+    width: 4vh;
+    border-radius: 100%;
+    *{color:black !important;}
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}

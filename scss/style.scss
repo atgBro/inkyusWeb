@@ -1,0 +1,405 @@
+@import "./abstracts/colors";
+@import "./components/burger";
+@import "./components/flex";
+@import "./components/home";
+@import "./components/projet"; 
+
+/* Clean & font */
+*, p{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 2em;
+    transition-duration: 200ms;
+}
+.wrapper, .root{ 
+    width: 100%;
+    overflow-x: hidden; 
+    height: 100%;
+}
+.wrapper{ 
+    position: fixed; 
+}
+html{overflow-x:hidden}
+.bg{    background-color: $fond;}
+#darkMode:checked ~ .bg{
+    background-color: $drakGray;
+}
+/* texte*/
+h1{
+    font-family: 'Staatliches', cursive;
+    text-transform: uppercase;
+    font-size: 4.5vw;
+    color: $purple;
+}
+@media screen and (max-width:800px){h1{_font-size: 3em;}}
+#darkMode:checked ~ .root h1{ color: $orange};
+p{
+    font-size: 0.8em;
+} 
+strong{
+    font-size: 1.2em;
+}
+/* dark mode */
+#darkMode{
+    position: fixed;
+    bottom: 20px;
+    right: 18px;
+    z-index: 10;
+    transform: scale(3);
+    opacity: 0;
+}
+.darkModeIco{
+    position: fixed;
+    bottom: 20px;
+    right: 18px;
+    transform: scale(2);
+    z-index: 9;
+    color: $white;
+    transition-duration: 300ms;
+}
+#darkMode:hover ~ .darkModeIco{transform: rotate(180deg) scale(2); color:$orange;}
+#darkMode:checked ~ .darkModeIco{ color: $orange; }
+#darkMode:checked:hover ~ .darkModeIco{color:$white;}
+/* Background */
+.bg{
+    background-color: $fond; 
+    z-index: -10;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    p{
+        margin-left: 2vw;
+        color: $purple;
+        opacity: 10%;
+        font-size: 15vw;
+        font-family: 'Staatliches', cursive;
+    }
+}
+#darkMode:checked ~ .bg {background-color: $drakGray; p{color:$orange}}
+.ruban1, .ruban2, .ruban3{
+    z-index: 0;
+    width: 200%;
+    background-color: $orange;
+    position: absolute;
+    top: 40vh; 
+    left:-10px;
+}
+.ruban1{transform: rotate(-5deg); height: 20px; top: 30vh;}
+.ruban2{transform: rotate(-2deg); height: 10px; top: 35vh;}
+.ruban3{transform: rotate(-3deg); height:  5px; top: 40vh;}
+#darkMode:checked ~ .ruban1{background-color: $purple;}
+#darkMode:checked ~ .ruban2{background-color: $purple;}
+#darkMode:checked ~ .ruban3{background-color: $purple;}
+/* structure */
+.root{
+    width: 100vw; 
+    height: 100%;
+}
+
+/* structure article*/
+article{
+    background-color: $white;
+    border-radius: 10px;
+    margin: 2.5vh 20px 2.5vh 20px ;
+    padding: calc(20px + 1vw);
+    box-shadow:  5px 5px 15px $shadowFond;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+} 
+article::-webkit-scrollbar{
+    display: none; /* for Chrome, Safari and Opera */
+}
+#darkMode:checked ~ .root article{
+    box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.445);
+}
+/* structure projets*/
+#darkMode:checked ~ .root .projet{border-left: 1vw $orange solid;}
+.projet{
+    overflow: hidden;
+    border-left: 1vw $purple solid;
+    position: relative;
+    $timeAnim: 800ms;    
+        .fond{
+            position: absolute;
+            top:0;
+            left:0;
+            background-image: url(https://www.resmusica.com/wp-content/uploads/2017/11/D%C3%A9cor.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            transition-duration: $timeAnim;
+        }
+        
+        .voile{
+            position: absolute;
+            top:0;
+            left:0;
+            height: 100%;
+            width: 0%;
+            background-color: $purple;
+            opacity: 70%;
+            transition-duration: $timeAnim;
+        }
+        h2{ color: white; position: relative; z-index: 2; transition-duration: $timeAnim;
+            background-color: $purple;
+            padding: 3px;
+            border-radius: 4px;
+            }
+        p{ 
+            color: white; position: relative; z-index: 2;
+            margin-right: 60%;
+            @media screen and (max-width: 1000px){
+                margin-right: 30%;
+            }
+            @media screen and (max-width: 600px){
+                margin-right: 10%;
+            }
+            transform: translateX(-150%);
+            transition-duration: $timeAnim;
+        }
+        .trigger{
+            position: absolute;
+            top:0;
+            left:0;
+            height: 100%;
+            width: 100%;
+            background-color: $purple;
+            opacity: 0;
+            z-index: 3;
+        }
+        @media screen and (min-width: 1000px){
+            a:hover ~ .voile{width: 50%;}
+            a:hover ~ .fond{background-size: 130%;}
+            a:hover ~ h2{transform: scale(1.2) translateX(8%) translateY(-0.2em);}
+            a:hover ~ p{transform: translateX(0);}
+        }
+        @media screen and (max-width: 1000px){
+            .voile{width: 100%}
+            .fond{background-size: 130%;}
+            p{transform: translateX(0)}
+        }
+        
+      
+}
+/* PROJECT */
+.projet{
+    a:hover ~ .fond{background-size:cover;transform: scale(1.1);}
+}
+
+/* form contact */
+.contact{
+    form{
+        /*init*/
+        // height: 0;
+        // display: none;
+        /**/
+        margin-top: 1.5em;
+        input{
+            padding: 0.5em;
+            margin:0.1em 0 0.2em 0;
+            border-radius: 0.5em;
+            border: 2px solid $orange;
+            background-color: $purple;
+            color:$white;
+            text-shadow: 0px 0px 6px rgb(0, 0, 0); 
+            transition-duration: 200ms;
+        }
+        input:hover, input:focus{
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) inset;
+            border-color: $purple;
+        }
+        input:focus{outline: none !important;}
+        ::placeholder, [type ="submit"]{
+            color:$orange;
+            text-shadow: initial;
+        }
+        [type ="submit"]:hover{
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transform: translate(-2px, -2px);
+        }
+        
+    }
+}
+#darkMode:checked ~ .root .contact form{
+   input{
+    border: 2px solid $purple;
+    background-color: $orange;
+   } 
+   input:hover, input:focus{border-color: $orange;}
+   ::placeholder, [type ="submit"]{color:$purple;}
+}
+/* Color */
+
+.bgWhite, article{
+    background-color: $white;
+    color: $drakGray;
+}
+#darkMode:checked ~ .root .bgWhite, #darkMode:checked ~ .root article{
+    background-color: $gray;
+    color: $white;
+}
+.lightText{
+    color: rgba(46, 43, 59, 0.90);
+}
+/**/
+.bgPurple{
+    background-color: $purple;
+    background: linear-gradient(180deg,
+     $purple 80%,
+     rgba(255, 255, 255, 0.3) 80%);
+    color: $white;
+}
+.bgPurple .lightText{
+    color: rgba(255, 255, 255, 0.90);
+}
+#darkMode:checked ~ .root .bgPurple{
+    background-color: $orange;
+    background: linear-gradient(180deg,
+     $orange 80%,
+     rgba(0, 0, 0, 0.3) 80%);
+    color: $gray;
+}
+.bgFullPurple{background:$purple;}
+#darkMode:checked ~ .root .bgFullPurple{background:$orange}
+
+
+/* pj section */
+
+.pj{
+    
+    position: relative;
+
+    .fab, .fas{
+        margin: 3px;
+        color:$purple;
+        font-size: 5vw;
+        transition-duration: 600ms;
+        + span{
+            opacity: 0;
+            position: absolute;
+            top:0;
+            right:0;
+            color: $white;
+            width: 100%;
+            text-align: center;
+            margin: 10px 0 10px 0;
+            font-weight: bold;
+            transition-duration: 1s;
+        }
+    }
+
+    .fab:hover, .fas:hover{
+        
+        z-index: 4;
+        ~ span:first-of-type{
+            z-index: 10;
+            display:block;
+            opacity: 1;
+            position: absolute;
+            top:20px;
+            background-color: $purple;  
+        }
+    }
+    span:hover{
+        display:block;
+        opacity: 1;
+        position: absolute;
+        top:20px;
+        background-color: $purple;
+    }
+}
+#darkMode:checked ~ .root{
+    .fab, .fas{
+        color:$orange;
+        + span{color:$drakGray}
+    }
+}
+/**/
+.bgGray{
+    background-color: $gray;
+    color: $white;
+}
+.bgGray .lightText{
+    color: rgba(255, 255, 255, 0.90);
+}
+.bgGray .userInfo img{
+    border: 2px solid $lightPurple;
+}
+/**/
+.bgDarkGray{
+    background-color: $drakGray;
+    color: $white;
+}
+.bgDarkGray .lightText{
+    color: rgba(106, 99, 133, 0.90);
+}
+.bgDarkGray .userInfo img{
+    border: 2px solid $purple;
+}
+.bg-hachure{
+    background: repeating-linear-gradient(45deg,
+    $purple,
+    $purple 10px,
+    $fond 10px,
+    $fond 20px);
+}
+#darkMode:checked ~ .root .bg-hachure{
+    background: repeating-linear-gradient(45deg,
+    $orange,
+    $orange 10px,
+    $drakGray 10px,
+    $drakGray 20px);
+}
+/*Clipping*/
+.ClipHalfBlock{
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+.ClipVignette{
+    clip-path: polygon(100% 0, 100% 100%, 4vw 100%, 0 calc(100% - 4vw), 0 0);
+}
+/**/
+
+
+.mn{
+    
+ background-color: transparent;
+ background: linear-gradient(180deg,
+  rgba(255, 255, 255, 0.3) calc(20px + 3vh + 4.6vw),
+   $white calc(20px + 3vh + 4.6vw),
+   $white 95%,
+   $purple 95%);
+}
+#darkMode:checked ~ .root .mn{
+    background-color: transparent;
+    background: linear-gradient(180deg,
+     rgba(0, 0, 0, 0.3) calc(20px + 3vh + 4.6vw),
+        $drakGray calc(20px + 3vh + 4.5vw),
+        $drakGray 95%,
+        $orange 95%);
+}
+.pj{
+    @media screen and (max-width: 1000px){display: none;}
+
+    .skill{
+        margin: 0.5vw;
+        padding: 0.5vw;
+        background-color: $fond ;
+        transform: rotate(45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    // Trigger "bug
+    // .fab, .fas{
+    //     transform: rotate(-90deg);
+    // }
+}
+#darkMode:checked ~ .root .pj{
+    .skill{
+        background-color: $drakGray;
+    }
+}
+
