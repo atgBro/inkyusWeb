@@ -1,0 +1,103 @@
+.indexArt{
+    display: grid;
+    grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-areas:
+    "22 22 22 22 44 44 44"
+    "22 22 22 22 tt tt 77"
+    "11 33 cc cc cc ll ll"
+    "11 33 cc cc cc ll ll"
+    "11 88 88 88 88 ll ll"
+    ;
+    @media screen and (max-width:600px) {
+        grid-template-areas:
+    "22 22 22 44 44 44 44"
+    "22 22 22 tt tt 77 77"
+    "11 cc cc cc cc ll ll"
+    "11 cc cc cc cc ll ll"
+    "11 33 33 33 33 ll ll"
+    ;
+    }
+    > .artTitle{grid-area: tt;}
+    > .artContent{grid-area: cc;}
+    > .artLinks{grid-area: ll;}
+    .artTitle{
+        width: fit-content;
+        background: 
+        linear-gradient(90deg, 
+        transparent 20%,
+         rgb(236, 79, 16) 20%,
+         rgb(236, 79, 16) 80%,
+         transparent 80%); 
+        z-index: 2;
+        animation: liveFromRight 1s linear 1;
+        animation-fill-mode: forwards;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        *{
+            text-align: center; 
+            color:white;
+            text-transform: uppercase;
+        }
+    }
+    .artContent{
+        background: rgba(255, 255, 255, 0.377);
+        z-index: 1;
+        animation: liveFromRight 1s linear 1; 
+        animation-fill-mode: forwards;
+        padding: 3% 10vh 3% 3%;
+        overflow-y: auto;
+        @media screen and (max-width:600px){
+            p{font-size: 0.7em;}
+            padding: 3% 7vh 3% 3%;
+        }
+    }
+    .artLinks{
+         
+        display: flex;
+        justify-content:center;
+        > a{
+            border: 4px rgb(64, 180, 216) solid;
+            z-index: 20;
+            &:hover{border: 4px rgba(255, 255, 255, 0.377) solid;z-index: 24;}
+            animation: liveFromRight 1s linear 1; 
+            animation-fill-mode: forwards;
+            padding:20px 20px 20px 4px;
+            width: 15vh;
+            height: fit-content;
+            background-color: rgb(64, 180, 216);
+            text-align: left;
+            vertical-align: middle;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            position: relative;
+            &::after{
+                content: "◄";
+                position: absolute;
+                top: 50%; 
+                left:-24px; 
+                transform: translateY(-50%);
+                font-size: 20px;
+                color: rgb(64, 180, 216);
+            }
+            &:hover::after{left:-27px}
+            @media screen and (max-height:500px){
+                font-size: 0.6em;
+                padding-top: 0.6em;
+                padding-bottom: 0.6em;
+            }
+        }
+        z-index: 20;
+        flex-direction: column;
+        @media screen and (max-width:600px){
+            font-size: 0.6em;
+        }
+        
+    }
+}
+@keyframes liveFromRight{
+    to{transform: translateX(0vw) scale(1.1);}
+    from{transform: translateX(100vw) scale(1.1);}
+}
