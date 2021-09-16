@@ -399,7 +399,6 @@
 .indexArt .artLinks {
   position: absolute;
   top: 0;
-  right: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -419,7 +418,6 @@
           animation-fill-mode: forwards;
   padding: 16px 20px 16px 4px;
   margin: 4px 0 4px 0;
-  width: 15vh;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -437,8 +435,23 @@
   z-index: 24;
 }
 
-@media screen and (max-width: calc(15vh + 400px)) {
+@media screen and (min-width: calc(601px)) {
   .indexArt .artLinks {
+    right: 400px;
+    height: auto;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .indexArt .artLinks > a {
+    width: 15vh;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: calc(600px)) {
+  .indexArt .artLinks {
+    left: auto;
     right: 0;
     height: 100vh;
     -webkit-box-pack: center;
