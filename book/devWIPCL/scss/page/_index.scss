@@ -60,7 +60,7 @@
     i{
         opacity: 1;
         transition-duration: 1s;
-        padding: 4px;
+        padding: 50vh 4px 50vh 4px;
         border-radius: 4px;
         color: white;
     }
@@ -93,7 +93,7 @@
     }
 }
 .indexMovLeft, .indexMovRight{
-    z-index: 10;
+    z-index: 11;
     position: absolute;
     height: 100vh;
     width: 30vw; 
@@ -148,22 +148,21 @@
     position: absolute;
     left:50%;
     transform: translateX(-50%);
+    overflow: hidden;
     i{
         font-size: 3em;
         transform: scale(1);
         transition-duration: 1s;
         color:white;
         border-radius: 100%;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgb(34, 38, 48);
         border: 3px transparent solid;
         width: 1em;
         text-align: center;
     }
-    &:hover{
-        transform: translateX(-50%) ;
-        i {transform: scale(1.2);}
+    &:hover i{
+        background-color: rgba(34, 38, 48, 0.486);
     }
-    
 
 }
 .indexYoga::after, .indexArt::after{
@@ -194,5 +193,26 @@
     right: calc(0vw + 5px);
     transform: translateX(0%);
 }
-.BtnNext{bottom: 10px;}
+.BtnNext{bottom: calc(10px + 20vh);}
 .BtnPrev{top: 10px;}
+.indexArt{
+    .BtnNext, .BtnPrev{
+        display: none;
+    }
+}
+@media screen and (max-width:600px){
+    
+    .BtnNext{
+        bottom: calc(3em + 20px + 10px + 20vh);
+        left:auto;
+        right: 10px;
+        transform: translateX(0); 
+    }
+    .BtnPrev{
+        top: auto;
+        bottom: calc(3em + 20px + 10px + 20vh);
+        left:auto;
+        right: 10px;
+        transform: translateX(0%) translateY(-110%);
+    }
+}

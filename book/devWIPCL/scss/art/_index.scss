@@ -1,26 +1,31 @@
 .indexArt{
-    display: grid;
-    grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
-    grid-template-areas:
-    "22 22 22 22 44 44 44"
-    "22 22 22 22 tt tt 77"
-    "11 33 cc cc cc ll ll"
-    "11 33 cc cc cc ll ll"
-    "11 88 88 88 88 ll ll"
-    ;
+    position: relative;
     @media screen and (max-width:600px) {
-        grid-template-areas:
-    "22 22 22 44 44 44 44"
-    "22 22 22 tt tt 77 77"
-    "11 cc cc cc cc ll ll"
-    "11 cc cc cc cc ll ll"
-    "11 33 33 33 33 ll ll"
-    ;
+        
     }
-    > .artTitle{grid-area: tt;}
-    > .artContent{grid-area: cc;}
-    > .artLinks{grid-area: ll;}
+
+    
+    .artIndexInfo{
+        right: 0;
+        top:0;
+        height: 100vh;
+        position: absolute;
+        width: calc(400px - 10vh - 3vw);
+        max-width: calc(80vw - 10vh - 3vw);
+        background: rgba(255, 255, 255, 0.377);
+        z-index: 1;
+        animation: liveFromRight 1s linear 1; 
+        animation-fill-mode: forwards;
+        padding: 3% 10vh 3% 3vw;
+        overflow-y: auto;
+        
+    }
+    .artContent{
+        @media screen and (max-width:600px){
+            p{font-size: 0.8em;}
+            padding: 3% 7vh 3% 3%;
+        }
+    }
     .artTitle{
         width: fit-content;
         background: 
@@ -41,29 +46,21 @@
             text-transform: uppercase;
         }
     }
-    .artContent{
-        background: rgba(255, 255, 255, 0.377);
-        z-index: 1;
-        animation: liveFromRight 1s linear 1; 
-        animation-fill-mode: forwards;
-        padding: 3% 10vh 3% 3%;
-        overflow-y: auto;
-        @media screen and (max-width:600px){
-            p{font-size: 0.7em;}
-            padding: 3% 7vh 3% 3%;
-        }
-    }
     .artLinks{
-         
+        position: absolute;
+        top:0;
+        right: 400px;
         display: flex;
-        justify-content:center;
+        flex-direction: column;
+        
         > a{
             border: 4px rgb(64, 180, 216) solid;
             z-index: 20;
             &:hover{border: 4px rgba(255, 255, 255, 0.377) solid;z-index: 24;}
             animation: liveFromRight 1s linear 1; 
             animation-fill-mode: forwards;
-            padding:20px 20px 20px 4px;
+            padding:16px 20px 16px 4px;
+            margin:4px 0 4px 0;
             width: 15vh;
             height: fit-content;
             background-color: rgb(64, 180, 216);
@@ -73,31 +70,20 @@
             text-transform: uppercase;
             color: white;
             position: relative;
-            &::after{
-                content: "◄";
-                position: absolute;
-                top: 50%; 
-                left:-24px; 
-                transform: translateY(-50%);
-                font-size: 20px;
-                color: rgb(64, 180, 216);
-            }
-            &:hover::after{left:-27px}
-            @media screen and (max-height:500px){
-                font-size: 0.6em;
-                padding-top: 0.6em;
-                padding-bottom: 0.6em;
-            }
         }
         z-index: 20;
-        flex-direction: column;
-        @media screen and (max-width:600px){
-            font-size: 0.6em;
+        @media screen and (max-width:calc(15vh + 400px)){
+            right: 0;
+            height: 100vh;
+            justify-content: center;
+            > a{
+                width: 10vh;
+                font-size: 0.8em;
+            }
         }
-        
     }
 }
 @keyframes liveFromRight{
-    to{transform: translateX(0vw) scale(1.1);}
-    from{transform: translateX(100vw) scale(1.1);}
+    to{transform: translateX(0vw);}
+    from{transform: translateX(100vw);}
 }
