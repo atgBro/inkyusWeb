@@ -55,6 +55,22 @@
         }
     }
 }
+.sliderNamePaint{
+    z-index: 10;
+    position: absolute;
+    bottom:20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px 4px 8px;
+    margin:0 0 10px 0;
+    border-radius: calc(1em + 4px);
+    background-color: white;
+    box-shadow: 5px 5px 31px 5px rgba(0,0,0,0.78);
+    @media screen and (max-width:600px){
+        left:40vw;
+        bottom:10px;
+    }
+}
 .snapWrapper{
     .gallerySection:nth-child(odd){
         .gallery{right: 0;}
@@ -103,15 +119,46 @@
     height: 100vh; 
     width: 100vw;
     left: 0;
-    p{
+    .zoomImg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 80%;
+        @media screen and (max-width:600px){
+            top:20%;
+            width: 100%;
+            height: 80%;
+        }
+    }
+    .zoomInfo{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 20%;
+        background-color: white;
+        @media screen and (max-width:600px){
+            height: 20%;
+            width: 100%;
+        }
+        *{
+            padding: 5px;
+        }
+    }
+    > p{
         cursor: pointer;
         position: absolute;
         top: 5px;
-        right: 10vw;
+        right: 21%;
         font-size: 3em;
         padding: 2px;
         margin:0;
         background-color: rgb(175, 177, 187);
+        @media screen and (max-width:600px){
+            bottom:5px;
+            top:auto;
+        }
     }
 }
 .snapWrapper{

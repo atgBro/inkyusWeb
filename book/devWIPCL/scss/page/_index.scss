@@ -165,31 +165,40 @@
     }
 
 }
-.indexYoga::after, .indexArt::after{
+.indexYoga .titleIndexCatg, .indexArt .titleIndexCatg{
     position: absolute;
     font-size: 15vw;
     transition-duration: 1s;
+    transition-property: transform;
     font-family: 'Josefin Sans', sans-serif;
 }
-.indexYoga::after{
-    content: "YOGA";
-    top:5px;
+.indexYoga .titleIndexCatg{
+    top:0;
+    margin-top: 1vh;
     right: calc(40vw - 5px);
     transform: translateX(100%);
     color: rgba(0, 0, 0, 0.288);
+    > span{color: transparent;}
+    > img{
+        position: absolute;
+        top: 1vw;
+        left: 0.5vw;
+        height: 30vw;
+        width: 30vw;
+    }
 }
-.indexArt::after{
-    content: "ART";
-    bottom: 5px;
+.indexArt .titleIndexCatg{
+    bottom: 0;
+    margin-bottom: 1vh;
     left: calc(40vw - 5px);
     transform: translateX(-100%);
     color: rgba(255, 255, 255, 0.288);
 }
-.indexPage.right .indexArt::after{
+.indexPage.right .indexArt .titleIndexCatg{
     left: calc(0vw + 5px);
     transform: translateX(0%);
 }
-.indexPage.left .indexYoga::after{
+.indexPage.left .indexYoga .titleIndexCatg{
     right: calc(0vw + 5px);
     transform: translateX(0%);
 }

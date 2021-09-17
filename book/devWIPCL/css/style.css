@@ -270,39 +270,55 @@
   background-color: rgba(34, 38, 48, 0.486);
 }
 
-.indexYoga::after, .indexArt::after {
+.indexYoga .titleIndexCatg, .indexArt .titleIndexCatg {
   position: absolute;
   font-size: 15vw;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.indexYoga::after {
-  content: "YOGA";
-  top: 5px;
+.indexYoga .titleIndexCatg {
+  top: 0;
+  margin-top: 1vh;
   right: calc(40vw - 5px);
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   color: rgba(0, 0, 0, 0.288);
 }
 
-.indexArt::after {
-  content: "ART";
-  bottom: 5px;
+.indexYoga .titleIndexCatg > span {
+  color: transparent;
+}
+
+.indexYoga .titleIndexCatg > img {
+  position: absolute;
+  top: 1vw;
+  left: 0.5vw;
+  height: 30vw;
+  width: 30vw;
+}
+
+.indexArt .titleIndexCatg {
+  bottom: 0;
+  margin-bottom: 1vh;
   left: calc(40vw - 5px);
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   color: rgba(255, 255, 255, 0.288);
 }
 
-.indexPage.right .indexArt::after {
+.indexPage.right .indexArt .titleIndexCatg {
   left: calc(0vw + 5px);
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
 }
 
-.indexPage.left .indexYoga::after {
+.indexPage.left .indexYoga .titleIndexCatg {
   right: calc(0vw + 5px);
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
@@ -615,6 +631,28 @@
   right: 0;
 }
 
+.sliderNamePaint {
+  z-index: 10;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 4px 8px 4px 8px;
+  margin: 0 0 10px 0;
+  border-radius: calc(1em + 4px);
+  background-color: white;
+  -webkit-box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.78);
+          box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.78);
+}
+
+@media screen and (max-width: 600px) {
+  .sliderNamePaint {
+    left: 40vw;
+    bottom: 10px;
+  }
+}
+
 .snapWrapper .gallerySection:nth-child(odd) .gallery {
   right: 0;
 }
@@ -671,15 +709,58 @@
   left: 0;
 }
 
-.zoomPicGallery p {
+.zoomPicGallery .zoomImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 80%;
+}
+
+@media screen and (max-width: 600px) {
+  .zoomPicGallery .zoomImg {
+    top: 20%;
+    width: 100%;
+    height: 80%;
+  }
+}
+
+.zoomPicGallery .zoomInfo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20%;
+  background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .zoomPicGallery .zoomInfo {
+    height: 20%;
+    width: 100%;
+  }
+}
+
+.zoomPicGallery .zoomInfo * {
+  padding: 5px;
+}
+
+.zoomPicGallery > p {
   cursor: pointer;
   position: absolute;
   top: 5px;
-  right: 10vw;
+  right: 21%;
   font-size: 3em;
   padding: 2px;
   margin: 0;
   background-color: #afb1bb;
+}
+
+@media screen and (max-width: 600px) {
+  .zoomPicGallery > p {
+    bottom: 5px;
+    top: auto;
+  }
 }
 
 .snapWrapper .gallerySection:nth-child(even) .galleryTxt {
