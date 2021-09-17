@@ -79,7 +79,10 @@
     }
 } 
 .indexMovLeft.done.hide ~ .cardId{
-    transform:translate(calc(0% - 100vw), calc(50vh - 50%));
+    transform:translate(calc(-50vw), calc(50vh - 50%));
+    @media screen and (max-width:600px) {
+        transform:translate(calc(-50% - 50vw), calc(50vh - 50%));
+    }
 }
 .indexMovRight.hide ~ .cardId{
     transform:translate(calc(100vw - 0%), calc(50vh - 50%));
@@ -143,7 +146,7 @@
     }
 }
 
-.BtnNext, .BtnPrev{
+.BtnArt{
     z-index: 20;
     position: absolute;
     left:50%;
@@ -181,7 +184,7 @@
     > span{color: transparent;}
     > img{
         position: absolute;
-        top: 1vw;
+        top: calc(1vw + 1vh);
         left: 0.5vw;
         height: 30vw;
         width: 30vw;
@@ -204,8 +207,9 @@
 }
 .BtnNext{bottom: calc(10px + 20vh);}
 .BtnPrev{top: 10px;}
+.BtnIndex{top: 70px;}
 .indexArt{
-    .BtnNext, .BtnPrev{
+    .BtnArt{
         display: none;
     }
 }
@@ -223,5 +227,8 @@
         left:auto;
         right: 10px;
         transform: translateX(0%) translateY(-110%);
+        &.BtnIndex{
+            transform: translateX(0%) translateY(-215%);
+        }
     }
 }

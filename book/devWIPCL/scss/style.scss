@@ -1,23 +1,28 @@
-@import "abstract/color";   
-@import "page/index";                 
-@import "art/index";                            
+@import "abstract/color";
+@import "page/index";        
+@import "art/index"; 
 @import "art/page";           
-@import "art/gallery";          
-@import "yoga/index";         
+@import "art/gallery";    
+@import "yoga/index";   
+@import "yoga/fiches"; 
+@import "yoga/video";       
 //text       
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 *{      
     color: #313640;    
-}           
-h1{   
-    font-family: 'Crimson Text', serif;        
-    color:rgb(22, 22, 22);              
-    text-transform: uppercase;        
-    text-align: center;     
-} 
+    font-family: 'Montserrat', sans-serif;
+}            
+h1{         
+    font-family: 'Crimson Text', serif; 
+    color:rgb(22, 22, 22);  
+    text-transform: uppercase; 
+    text-align: center;          
+}  
     
-html{           
+html{ 
     scroll-behavior: smooth;            
 }      
 body{         

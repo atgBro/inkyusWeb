@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 .indexPage {
   position: relative;
   height: 100vh;
@@ -120,8 +121,15 @@
 }
 
 .indexMovLeft.done.hide ~ .cardId {
-  -webkit-transform: translate(calc(0% - 100vw), calc(50vh - 50%));
-          transform: translate(calc(0% - 100vw), calc(50vh - 50%));
+  -webkit-transform: translate(calc(-50vw), calc(50vh - 50%));
+          transform: translate(calc(-50vw), calc(50vh - 50%));
+}
+
+@media screen and (max-width: 600px) {
+  .indexMovLeft.done.hide ~ .cardId {
+    -webkit-transform: translate(calc(-50% - 50vw), calc(50vh - 50%));
+            transform: translate(calc(-50% - 50vw), calc(50vh - 50%));
+  }
 }
 
 .indexMovRight.hide ~ .cardId {
@@ -243,7 +251,7 @@
   }
 }
 
-.BtnNext, .BtnPrev {
+.BtnArt {
   z-index: 20;
   position: absolute;
   left: 50%;
@@ -252,7 +260,7 @@
   overflow: hidden;
 }
 
-.BtnNext i, .BtnPrev i {
+.BtnArt i {
   font-size: 3em;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -266,7 +274,7 @@
   text-align: center;
 }
 
-.BtnNext:hover i, .BtnPrev:hover i {
+.BtnArt:hover i {
   background-color: rgba(34, 38, 48, 0.486);
 }
 
@@ -297,7 +305,7 @@
 
 .indexYoga .titleIndexCatg > img {
   position: absolute;
-  top: 1vw;
+  top: calc(1vw + 1vh);
   left: 0.5vw;
   height: 30vw;
   width: 30vw;
@@ -332,7 +340,11 @@
   top: 10px;
 }
 
-.indexArt .BtnNext, .indexArt .BtnPrev {
+.BtnIndex {
+  top: 70px;
+}
+
+.indexArt .BtnArt {
   display: none;
 }
 
@@ -351,6 +363,10 @@
     right: 10px;
     -webkit-transform: translateX(0%) translateY(-110%);
             transform: translateX(0%) translateY(-110%);
+  }
+  .BtnPrev.BtnIndex {
+    -webkit-transform: translateX(0%) translateY(-215%);
+            transform: translateX(0%) translateY(-215%);
   }
 }
 
@@ -373,6 +389,14 @@
           animation-fill-mode: forwards;
   padding: 3% 10vh 3% 3vw;
   overflow-y: auto;
+  -webkit-box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.603);
+          box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.603);
+}
+
+@media screen and (min-width: 600px) {
+  .indexArt .artIndexInfo {
+    z-index: 21;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -426,29 +450,34 @@
 }
 
 .indexArt .artLinks > a {
-  border: 4px #40b4d8 solid;
   z-index: 20;
   -webkit-animation: liveFromRight 1s linear 1;
           animation: liveFromRight 1s linear 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  padding: 16px 20px 16px 4px;
-  margin: 4px 0 4px 0;
+  padding: 10px 20px 30px 4px;
+  margin: 4px 0 4px 36px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: #40b4d8;
   text-align: left;
   vertical-align: middle;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
   position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
-.indexArt .artLinks > a:hover {
-  border: 4px rgba(255, 255, 255, 0.377) solid;
-  z-index: 24;
+@media screen and (min-width: 600px) {
+  .indexArt .artLinks > a:hover {
+    width: calc(15vh + 36px);
+    margin-left: 0;
+    z-index: 24;
+  }
 }
 
 @media screen and (min-width: calc(601px)) {
@@ -575,8 +604,6 @@
 }
 
 .gallery .slider div {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
   height: 20vh;
   width: 20vh;
   cursor: pointer;
@@ -588,7 +615,12 @@
   transition-property: transform, -webkit-transform;
 }
 
-.gallery .slider div:not(.BtngalInter):hover {
+.gallery .slider div:not(.paintGalleryEmpty) {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.gallery .slider div:not(.BtngalInter):not(.paintGalleryEmpty):hover {
   border: 2px solid black;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
@@ -642,8 +674,8 @@
   margin: 0 0 10px 0;
   border-radius: calc(1em + 4px);
   background-color: white;
-  -webkit-box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.78);
-          box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.78);
+  -webkit-box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.603);
+          box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.603);
 }
 
 @media screen and (max-width: 600px) {
@@ -677,8 +709,8 @@
   max-width: 80vw;
   background-color: white;
   z-index: 3;
-  -webkit-box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.78);
-          box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.78);
+  -webkit-box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.603);
+          box-shadow: 5px 5px 31px 5px rgba(0, 0, 0, 0.603);
 }
 
 .gallerySection .galleryTitle {
@@ -719,14 +751,15 @@
 
 @media screen and (max-width: 600px) {
   .zoomPicGallery .zoomImg {
-    top: 20%;
+    top: 30%;
     width: 100%;
-    height: 80%;
+    height: 70%;
   }
 }
 
 .zoomPicGallery .zoomInfo {
   position: absolute;
+  overflow-y: auto;
   top: 0;
   right: 0;
   height: 100%;
@@ -736,13 +769,22 @@
 
 @media screen and (max-width: 600px) {
   .zoomPicGallery .zoomInfo {
-    height: 20%;
+    height: 30%;
     width: 100%;
   }
 }
 
 .zoomPicGallery .zoomInfo * {
   padding: 5px;
+}
+
+.zoomPicGallery .zoomInfo h2 {
+  margin-bottom: 0;
+}
+
+.zoomPicGallery .zoomInfo .subTitle {
+  margin-top: 0;
+  font-size: 0.9em;
 }
 
 .zoomPicGallery > p {
@@ -753,13 +795,14 @@
   font-size: 3em;
   padding: 2px;
   margin: 0;
-  background-color: #afb1bb;
+  background-color: rgba(175, 177, 187, 0.8);
 }
 
 @media screen and (max-width: 600px) {
   .zoomPicGallery > p {
     bottom: 5px;
     top: auto;
+    right: 5px;
   }
 }
 
@@ -767,25 +810,34 @@
   left: 0;
 }
 
-.snapWrapper .gallerySection:nth-child(even) .BtnNext, .snapWrapper .gallerySection:nth-child(even) .BtnPrev {
+.snapWrapper .gallerySection:nth-child(even) .BtnArt {
   right: 0;
   left: auto;
 }
 
 @media screen and (max-width: 600px) {
-  .snapWrapper .gallerySection:nth-child(even) .BtnNext, .snapWrapper .gallerySection:nth-child(even) .BtnPrev {
+  .snapWrapper .gallerySection:nth-child(even) .BtnArt {
     right: 2.5vw;
   }
-  .snapWrapper .gallerySection:nth-child(even) .BtnNext > i, .snapWrapper .gallerySection:nth-child(even) .BtnPrev > i {
+  .snapWrapper .gallerySection:nth-child(even) .BtnArt > i {
     font-size: calc(15vw - 6px);
   }
 }
 
 @media screen and (min-width: 600px) {
-  .snapWrapper .gallerySection:nth-child(even) .BtnNext, .snapWrapper .gallerySection:nth-child(even) .BtnPrev {
+  .snapWrapper .gallerySection:nth-child(even) .BtnArt {
     left: 410px;
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .snapWrapper .gallerySection:nth-child(odd) .sliderNamePaint {
+    right: 40vw;
+    left: auto;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
   }
 }
 
@@ -797,22 +849,22 @@
   right: 0;
 }
 
-.snapWrapper .gallerySection:nth-child(odd) .BtnNext, .snapWrapper .gallerySection:nth-child(odd) .BtnPrev {
+.snapWrapper .gallerySection:nth-child(odd) .BtnArt {
   left: 0;
   right: auto;
 }
 
 @media screen and (max-width: 600px) {
-  .snapWrapper .gallerySection:nth-child(odd) .BtnNext, .snapWrapper .gallerySection:nth-child(odd) .BtnPrev {
+  .snapWrapper .gallerySection:nth-child(odd) .BtnArt {
     left: 2.5vw;
   }
-  .snapWrapper .gallerySection:nth-child(odd) .BtnNext > i, .snapWrapper .gallerySection:nth-child(odd) .BtnPrev > i {
+  .snapWrapper .gallerySection:nth-child(odd) .BtnArt > i {
     font-size: calc(15vw - 6px);
   }
 }
 
 @media screen and (min-width: 600px) {
-  .snapWrapper .gallerySection:nth-child(odd) .BtnNext, .snapWrapper .gallerySection:nth-child(odd) .BtnPrev {
+  .snapWrapper .gallerySection:nth-child(odd) .BtnArt {
     left: auto;
     right: 410px;
     -webkit-transform: translateX(0);
@@ -870,8 +922,100 @@
   vertical-align: middle;
 }
 
+.yogaBox {
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.548), rgba(0, 0, 0, 0.089));
+  -webkit-box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.11), -6px -6px 8px rgba(255, 255, 255, 0.781);
+          box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.11), -6px -6px 8px rgba(255, 255, 255, 0.781);
+}
+
+.yogaBoxInvert {
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.548), rgba(0, 0, 0, 0.089));
+  -webkit-box-shadow: 6px 6px 8px rgba(255, 255, 255, 0.781), -6px -6px 8px rgba(0, 0, 0, 0.11);
+          box-shadow: 6px 6px 8px rgba(255, 255, 255, 0.781), -6px -6px 8px rgba(0, 0, 0, 0.11);
+}
+
+.yogaIndexInfo {
+  -webkit-animation: liveFromLeft 1.2s linear 1;
+          animation: liveFromLeft 1.2s linear 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  max-width: 80vw;
+  height: 100%;
+  border-radius: 0;
+}
+
+.yogaNav {
+  z-index: 3;
+  -webkit-animation: liveFromLeft 1.2s linear 1;
+          animation: liveFromLeft 1.2s linear 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  bottom: 20%;
+  left: 400px;
+}
+
+.yogaNav a {
+  display: block;
+  padding: 5px;
+  margin: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.yogaNav a:hover {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .yogaNav {
+    left: 4px;
+    bottom: 4px;
+  }
+}
+
+@-webkit-keyframes liveFromLeft {
+  to {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+  }
+  from {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+}
+
+@keyframes liveFromLeft {
+  to {
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+  }
+  from {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+}
+
+.yogaCardInfo {
+  left: auto;
+  right: 0;
+}
+
 * {
   color: #313640;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
