@@ -31,7 +31,8 @@
 }
 .yogaBox{
     border-radius: 14px;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.548), rgba(0, 0, 0, 0.089));
+    //background: linear-gradient(145deg, rgba(255, 255, 255, 0.548), rgba(0, 0, 0, 0.089));
+    background: white;
     box-shadow:  6px 6px 8px rgba(0, 0, 0, 0.11),
                 -6px -6px 8px rgba(255, 255, 255, 0.781);
 }
@@ -42,8 +43,8 @@
                 -6px -6px 8px rgba(0, 0, 0, 0.11);
 }
 .yogaIndexInfo{
-    animation: liveFromLeft 1.2s linear 1; 
-    animation-fill-mode: forwards;
+    &:not(.yogaCardInfo):not(.yogaVideoInfo){animation: liveFromLeft 1.2s linear 1; 
+    animation-fill-mode: forwards;}
     position: absolute;
     top: 0;
     left: 0;

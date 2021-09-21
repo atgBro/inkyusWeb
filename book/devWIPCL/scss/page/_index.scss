@@ -171,7 +171,11 @@
 .indexYoga .titleIndexCatg, .indexArt .titleIndexCatg{
     position: absolute;
     font-size: 15vw;
-    transition-duration: 1s;
+    transition-duration: 0s;
+    @media screen and (max-width:600px) {
+        transition-duration: 1s;
+        
+    }
     transition-property: transform;
     font-family: 'Josefin Sans', sans-serif;
 }
