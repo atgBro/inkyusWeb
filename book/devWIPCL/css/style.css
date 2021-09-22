@@ -735,8 +735,18 @@
 
 .gallerySection .galleryContent {
   margin-top: 5vw;
-  padding: 10px;
+  padding: 10px 10px 10px 15px;
   z-index: 4;
+  position: relative;
+}
+
+.gallerySection .galleryContent > span {
+  position: absolute;
+  top: 10px;
+  left: 4px;
+  height: calc(100% - 20px);
+  width: 4px;
+  border-radius: 2px;
 }
 
 .zoomPicGallery {
