@@ -1,0 +1,240 @@
+/* general */
+body, p, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+/* texte*/
+h1{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin-bottom: 95px;
+}
+
+/* --- NAV --- */
+nav{
+    position: fixed;
+    z-index: 1;
+    bottom: 65px;
+    right: 25px;
+}
+nav a{
+    width: 30px;
+    margin: 5px;
+    color: white;
+}
+nav a i{
+    transition-duration: 300ms;
+}
+nav a:hover i{
+    transform: translateY(-5px);
+}
+/* --- HEADER ---*/
+header, footer{
+    padding: 5px;
+}
+header, footer, .contact{
+    background-color: black;
+    color: white;
+}
+#top [href="#top"]{
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    font-size: 2em;
+    color: white;
+    transition-duration: 400ms;
+}
+#top [href="#top"]:hover{
+    transform: translateY(-15px);
+}
+/* --- MAIN --- */
+.title{
+    border-bottom: 2px solid black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.section{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+/* FORM */
+
+form{
+    padding-top:20px;
+  }
+  
+  input[type=text], textarea, input[type=email] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      margin-right: 0px;
+      margin-left: 0px;
+      resize: vertical;
+    }
+    label{margin-right: 0px;
+      margin-left: 0px;
+      width: 100%;}
+    
+    input[type=submit] {
+      color: black;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input:hover, textarea:hover{
+        border: 1px solid black;
+    }
+    
+    .container {
+      /* Ajouter box-sizing */
+      box-sizing : border-box;
+      border-radius:5px;
+      width: 100%;
+      /* redéfinition 400 + 2*20 */
+      max-width: 440px;
+      margin:0 auto;
+      margin-top: 30px;
+    }
+/* --- FOOTER --- */
+footer {
+    background-color: black;
+    padding-top: 10px;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+}
+footer h2 i {
+    transition-duration: 300ms;
+}
+footer h2:hover i {
+    transform: translateX(20px);
+}
+
+/* pc */
+@media only screen and (min-width: 601px){
+    .portable{
+        display: none;
+    }
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0px;
+    }
+    .skills{
+        width: 20%;   
+        grid-column: 2;     
+    }
+    .exp{
+        width: 70%;   
+        grid-column: 3/5;     
+    }
+    .collumn{
+        width: 100%;
+    }   
+    .title-xp{
+        grid-column: 1/3;
+    }
+    .date-xp{
+        grid-column: 4/6;
+        text-align: right;
+    }
+    .legend-xp{
+        grid-column: 1/6;
+        
+    }
+    .content-xp{
+        grid-column: 1/6;
+    }
+    .face-picture{
+        position: fixed;
+        top: 15%;
+        left: 5%;
+        
+        height: 20%;
+        width: auto;
+    }
+}
+/* portable */
+@media only screen and (max-width: 600px){
+    
+    .pc{
+        display: none;
+    }
+    main, footer, .contact{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    header{
+        padding: 5px;
+        text-align: center;
+    }
+    .root{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .face-picture{
+        display: block;
+        margin:auto;
+        width: 50%;
+    }
+    form{
+        padding-right: 45px;
+    }
+    nav{
+
+        bottom: 50vh;
+        right: 0;
+        background-color: black;
+        border-radius: 15px 0 0 15px ;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        
+    }
+    nav a{
+        z-index: 1;
+        width: 15px;
+        height: 15px;
+        margin: 5px;
+        padding: 3px ;
+        display: block;
+        text-align: center;
+    }
+    nav a:hover i{
+        transform: translateX(-3px);
+    }
+    p,li, .content, .content-xp{
+        padding-right: 45px;
+    }
+    strong, h3{
+        padding-left: 10px;
+    }
+    h2{
+        text-align: center;
+    }
+    article, ul{
+        border-radius: 15px;
+        padding: 15px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        box-shadow:  5px 5px 25px #d9d9d9b4,
+             -5px -5px 25px #ffffff;
+    }
+}
+
+
