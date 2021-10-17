@@ -1,1 +1,235 @@
-<!doctype html><html lang="fr"><head><title>Arthur Lecointe</title><meta charset="utf-8"/><link rel="icon" href="/favicon.png"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="keywords" content="Arthur Lecointe, Arthur, lecointe, web, développeur, php, symfony, web développeur, création site internet, Paris, région paris, Python, Typescript, javascript"><meta name="description" content="Site web de Arthur Lecointe "/><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap" rel="stylesheet"></head><body><div class="wrapper"><nav><input type="checkbox" id="burger"> <span></span> <span></span><div class="burger"><a href="https://codepen.io/tydyus" target="_blank" class="flex"><i class="fab fa-codepen"></i><p>CodePen</p></a><a href="https://github.com/tydyus" target="_blank" class="flex"><i class="fab fa-github"></i><p>Github</p></a><a href="https://www.linkedin.com/in/arthur-lecointe-453585131/" target="_blank" class="flex"><i class="fab fa-linkedin-in"></i><p>Linkedin</p></a><a href="https://www.instagram.com/ink.yus" target="_blank" class="flex"><i class="fab fa-instagram"></i><p>Instagram</p></a><a href="https://www.behance.net/tydyus" target="_blank" class="flex"><i class="fab fa-behance"></i><p>Behance</p></a><a href="http://tydyus.eu/book/CV" target="_blank" class="flex"><i class="far fa-id-card"></i><p>Mon CV</p></a></div></nav><input type="checkbox" id="darkMode" checked="checked"> <i class="fas fa-adjust darkModeIco"></i><div class="bg"><p>Arthur Lecointe</p></div><div class="ruban1"></div><div class="ruban2"></div><div class="ruban3"></div><noscript>You need to enable JavaScript to run this app.</noscript><div id="root" class="root"></div></div><script>!function(e){function t(t){for(var n,l,f=t[0],i=t[1],a=t[2],c=0,s=[];c<f.length;c++)l=f[c],Object.prototype.hasOwnProperty.call(o,l)&&o[l]&&s.push(o[l][0]),o[l]=0;for(n in i)Object.prototype.hasOwnProperty.call(i,n)&&(e[n]=i[n]);for(p&&p(t);s.length;)s.shift()();return u.push.apply(u,a||[]),r()}function r(){for(var e,t=0;t<u.length;t++){for(var r=u[t],n=!0,f=1;f<r.length;f++){var i=r[f];0!==o[i]&&(n=!1)}n&&(u.splice(t--,1),e=l(l.s=r[0]))}return e}var n={},o={1:0},u=[];function l(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,l),r.l=!0,r.exports}l.m=e,l.c=n,l.d=function(e,t,r){l.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(e,t){if(1&t&&(e=l(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(l.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)l.d(r,n,function(t){return e[t]}.bind(null,n));return r},l.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(t,"a",t),t},l.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},l.p="/";var f=this.webpackJsonptydyusweb=this.webpackJsonptydyusweb||[],i=f.push.bind(f);f.push=t,f=f.slice();for(var a=0;a<f.length;a++)t(f[a]);var p=i;r()}([])</script><script src="/static/js/2.45ae2c4a.chunk.js"></script><script src="/static/js/main.8df7c002.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384- AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <title>Arthur Lecointe</title>
+</head>
+
+<body>
+    <!-- deco -->
+    <i class="fas fa-code deco"></i>
+    <!--      -->
+    <nav>
+        <div class="link">
+            <!-- in -->
+            <a href="#"><i class="fas fa-hashtag"></i><span class="hiddenMobile"> Home</span></a>
+            <a href="#skills" class="hiddenMobile"><i class="fas fa-hashtag"></i> Compétences</a>
+            <a href="#projects" class="hiddenMobile"><i class="fas fa-hashtag"></i> Projets</a>
+            <a href="#other" class="hiddenMobile"><i class="fas fa-hashtag"></i> Autres</a>
+            <a href="#contact"><i class="fas fa-paper-plane"></i>
+                <span class="hiddenMobile"> Contact</span> </a>
+            <!-- out -->
+            <a href="https://github.com/tydyus"><i class="fab fa-github-square" ></i>
+                <span class="hiddenMobile"> GitHub</span></a>
+            <a href="https://www.linkedin.com/in/arthur-lecointe-453585131/"><i class="fab fa-linkedin" ></i>
+                <span class="hiddenMobile"> Linkedin</span></a>
+            <a href="./Arthur_CV.pdf" ><i class="fas fa-file-download"></i>
+                <span class="hiddenMobile"> Mon CV</span></a>
+            <!-- fx -->
+            <span class="bubbleLink hiddenMobile"></span>
+        </div>
+    </nav>
+    <header>
+        <section class="sectionHead">
+            <div class="cardHead">
+                <div class="img">
+                    <img src="./img/tof.jpg" alt="tof">
+                </div>
+                <div class="note">
+                    <p class="handscript"> En Recherche d'une entreprise pour une alternance de 12 mois !!</p>
+                </div>
+                
+                <h1 class="title typing blinkingTyping">Arthur Lecointe</h1>
+                <h2 class="normalCase">Developpeur Web</h2>
+            </div>
+            
+        </section>
+    </header>
+    <main>
+        <section id="skills">
+            <h2>Compétences</h2>
+            <article>
+                <div class="img"><img src="./img/SVG/html.svg" alt="html"></div>
+                <h3>HTML5/CSS3/SASS</h3>
+            </article>
+            <article>
+                <div class="img"><img src="./img/SVG/jsts.svg" alt="javascript/typescript"></div>
+                <h3>JavaScript/TypeScript</h3>
+            </article>
+            <article>
+                <div class="img"><img src="./img/SVG/react.svg" alt="react"></div>
+                <h3>React.js</h3>
+            </article>
+            <article>
+                <div class="img"><img src="./img/SVG/symfony.svg" alt="symfony"></div>
+                <h3>Symfony</h3>
+            </article>
+            <article>
+                <div class="img"><img src="./img/SVG/sql.svg" alt="database"></div>
+                <h3>SQL/NoSQL</h3>
+            </article>
+            <article>
+                <div class="img"><img src="./img/SVG/adobe.svg" alt="adobe"></div>
+                <h3>Suite Adobe</h3>
+            </article>
+        </section>
+        <section id="projects">
+            <h2>Projets</h2>
+            <div class="diapo diapoProject diapoProjectWeb" id="diapoProject">
+                <div class="titleDiapo">
+                    <h3>YogArt - Site PortFolio</h3>
+                </div>
+                <!-- card -->
+                <div class="wrapperCardDiapo">
+
+                    <div class="cardDiapo img cardDiapoL"></div>
+                    <div class="cardDiapo img" id="cardDiapoPl"></div>
+                    <div class="cardDiapo OnFocus img" id="cardDiapoP"></div>
+                    <div class="cardDiapo img" id="cardDiapoPr"></div>
+                    <div class="cardDiapo img cardDiapoR"></div>
+
+                    <div class="InfoDiapo"
+                    card-title="Site PortFolio (template)"
+                    card-mobile="./img/project/perso/mobile.PNG"
+                    card-pc="./img/project/perso/pc.PNG"
+                    card-info="Template pour un site portefolio en full html/css, le site contient entre autre un alternateur de theme entre sombre et clair ainsi qu'un menu burger déroulant."
+                    card-link="./projets/portfolio_Template/index.html"
+                    ></div>
+                    <div class="InfoDiapo"
+                    card-title="Musique en streaming"
+                    card-mobile="./img/project/musique/mobile.PNG"
+                    card-pc="./img/project/musique/pc.PNG"
+                    card-info="Projet de fin de formation via ALT-RH, Lecteur de musique en ligne avec une stack Html/Sass/Typescript/Symfony."
+                    card-link=""
+                    ></div>
+                    <div class="InfoDiapo"
+                    card-title="YogArt - Site PortFolio"
+                    card-mobile="./img/project/yogart/mobile1.PNG"
+                    card-pc="./img/project/yogart/pc1.PNG"
+                    card-info="Site web réalisé pour l'artiste Christine Lecointe, le site ce divise en une catégorie Yoga, contenant des fiches techniques, et Art, contenants plusieurs galeries de tableaux. Le site à été réalisé avec la stack Html/Sass/TypeScript/React/Directus."
+                    card-link=""
+                    ></div>
+                    <div class="InfoDiapo"
+                    card-title="tWiYM - Jeu d'aventure Web"
+                    card-mobile="./img/project/twiym/mobile.PNG"
+                    card-pc="./img/project/twiym/pc.PNG"
+                    card-info="Jeu dont vous êtes le héros en version web, le design comporte, en plus de la mécanique de chemin, un système d'inventaire, un module de conditions/gain/perte lors de la prise de chemin, ainsi que plusieurs sauvegarde. Le site à été réalisé avec la stack Html/Sass/TypeScript/FireBase."
+                    card-link="./projets/twiym/index.html"
+                    ></div>
+                    <div class="InfoDiapo"
+                    card-title="Avenir - Site Vitrine (template)"
+                    card-mobile="./img/project/agence/mobile.PNG"
+                    card-pc="./img/project/agence/pc.PNG"
+                    card-info="Template pour un site vitrine static d'architecture, le site contient une app de création de blueprint pour de slieux de vie, avec possibilité de sauvegarder/charger des plans. Le site à été réalisé en Html/Sass/Typescript."
+                    card-link="./projets/agence/index.html"
+                    ></div>
+                    
+                    
+                    
+                    <div class="cardDiapo ToLeft"><i class="fas fa-arrow-left"></i></div>
+                    <div class="cardDiapo ToRight"><i class="fas fa-arrow-right"></i></div>
+                </div>
+                <!-- move -->
+                
+            </div>
+            <p class="infoProject">
+                some text
+            </p>
+            <div class="projectView">
+                <div class="projectPc">
+                    <div class="imgProject"
+                    style="
+                    background-image: url('./img/project/yogart/pc1.PNG');
+                    background-size: contain;
+                    background-repeat: no-repeat ;
+                    background-position: center;
+                    "
+                    ></div>
+                </div>
+                <div class="projectMobile">
+                    <div class="imgProject"
+                    style="
+                    background-image: url('./img/project/yogart/mobile1.PNG');
+                    background-size: contain;
+                    background-repeat: no-repeat ;
+                    background-position: center;
+                    "
+                    ></div>
+                </div>
+            </div>
+        </section>
+        <section id=other>
+            <h2>Other</h2>
+            <div class="otherGJ">
+                <h3>GameJam</h3>
+                <p>
+                    Réalisation d'un jeux vidéo durant une période de temps réduite, généralement 48 à 72h, le tout avec un ou des thèmes imposé. Tout seul ou en équipe j'ai été amené à participer à plusieurs de ses évènements, addictif de par leur contrainte c'est un exercise de gestion de rush apportant à la fois satisfaction et compétences.
+                    Voici une selections de quelqu'un de ses evenements auquelle j'ai participé:
+                </p>
+                <div class="cardW">
+                    <a href="https://ldjam.com/events/ludum-dare/46/ad-herbis"><div class="cardOther img">
+                        <img src="https://static.jam.vg/raw/618/3/z/2e7cb.png" alt="Ad-Herbis">
+                        <span>Ad-Herbis</span>
+                    </div></a>
+                    <a href="https://tydyus.itch.io/runner"><div class="cardOther img">
+                        <img src="./img/runnerLogo.PNG" alt="Runner">
+                        <span>Runner</span>
+                    </div></a>
+                </div>
+                
+            </div>
+            <div class="otherGp">
+                <h3>Graphisme</h3>
+                <p>
+                    Ayant eu un parcours d'infographiste j'ai plusieurs projets artistique à mon actif et continue, de manière occasionnel à réalisé des illustrations durant mon temps libres.
+                    Vous pouvez voir certains de mes projets sur mon Behance, ainsi que des dessins plus casual sur mon Instagram: 
+                </p>
+                <div class="cardW">
+                    <a href="https://www.behance.net/tydyus"><div class="cardOther"><i class="fab fa-behance"></i>
+                        <span>Behance</span>
+                    </div></a>
+                    <a href="https://www.instagram.com/ink.yus/"><div class="cardOther"><i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </div></a>
+                </div>
+                
+            </div>
+            
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="cardContact">
+                <p>Email:</p>
+                <p>contact@tydyus.com</p>
+                <p>Télephone:</p>
+                <p>06.58.95.81.72</p>
+                <p>-</p>
+                <form action="mailto:contact@tydyus.com" method="post" encType="text/plain" class="flex fCol">
+                    <label for="FirstName">Nom</label>
+                    <input type="text" name="FirstName" placeholder="Nom"/>
+                    <label for="FirstName">Email</label>
+                    <input type="email" name="Email" placeholder="Email"/>
+                    <input type="submit" name="submit" value="Send" />
+                </form>
+            </div>
+            
+            
+        </section>
+    </main>
+    <footer>
+        <p>
+            Site créé par Arthur Lecointe.
+        </p>
+        <a href='https://fr.freepik.com/vecteurs/fond' alt="Fond vecteur créé par macrovector - fr.freepik.com" ><i class="fas fa-image"></i></a>
+    </footer>
+    <script src="./js/typing.js"></script>
+    <script src="./js/bubbleLink.js"></script>
+    <script src="./js/diapo.js"></script>
+
+</body>
+</html>

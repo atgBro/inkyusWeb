@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* ------ FLEX BASE STRUCTURE------  */
+.flex {
+  /* [][][]------ */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flexBasis100 {
+  /* [--][--][--] */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flexBasis100 > * {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.flexCenter {
+  /* ---[][][]--- */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* ------ FLEX AGENCEMENT ------ */
+.fCol {
+  /* de haut en bas */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fAlignCenter {
+  /* aligné au centre */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* ------ RESPONSIVE -------*/
+@media screen and (max-width: 1000px) {
+  .flex, .flexBasis100, .flexStart, .flexEnd, .flexCenter, .flexSpaceBetween, .flexSpaceAround, .flexWrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .fRowMobile {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .fBasis30 {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+  .fBasis50 {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  .fBasis70 {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+  }
+}
+/*# sourceMappingURL=flex.css.map */

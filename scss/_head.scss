@@ -1,0 +1,60 @@
+header{
+    margin:0;
+    padding:0;
+}
+.sectionHead{
+    height: 100vh;
+    background: url("../img/head.jpg");
+    background-size: cover;
+    background-position: left top;
+    position: relative;
+    .cardHead{
+        position: absolute;
+        top:33%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        > *{
+            align-self: center;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.815);
+        }
+        //font
+        h1{
+            margin-bottom: 10px;
+        }
+        h2{
+            margin-top: 0;
+        }
+        //tof
+        .img{
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            border: 3px solid $white
+        }
+        .note{
+            position: absolute;
+            background-image: url("../img/4x/blocNote2@4x.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 250px;
+            height: 200px;
+            transform: rotate(-20deg) ;
+            left:50%;
+            top:100px;
+            p{
+                text-shadow: none;
+                color: $red;
+                padding:20px;
+                margin-top: 40px;
+                text-align: center;
+            }
+            @media screen and (max-width:600px) {
+                left:calc( 50% - 130px);
+                top: 100%;
+            }
+        }
+    }
+}  

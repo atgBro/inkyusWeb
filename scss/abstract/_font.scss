@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    color: $white;
+}
+h1{
+    font-size: 3em;
+    text-align: center;
+}
+h2{
+    font-family: 'Prata', serif;
+    color:$yellow;
+    margin:2em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.normalCase{
+    text-transform: inherit;
+}
+.handscript{
+    font-family: 'Permanent Marker', cursive;
+}

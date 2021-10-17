@@ -1,0 +1,91 @@
+.diapo{
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    @media screen  and (max-width:600px){
+        margin-top: 6em;
+    }
+    .titleDiapo{
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        *{
+            text-align: center;
+            margin:0.3em;
+            padding:0.2em 0.5em;
+            border-radius: 0.5em;
+            background-color: $black;
+        }
+        z-index: 2;
+        
+    }
+    .wrapperCardDiapo{
+        display: flex;
+        justify-content: center;
+        width: max-content;
+        background-color: rgba(0, 0, 0, 0.384);
+        border-radius: 5vmin;
+        position: relative;
+    } 
+    .cardDiapo{
+        cursor: pointer;
+        height: 10vmin;
+        width: 10vmin;
+        border-radius: 100%;
+        background: $black;
+        margin:2vmin;
+        opacity: 0.4;
+        &.OnFocus{
+            opacity: 1;
+            border: solid $yellow 2px;
+            box-shadow: inset 0 0 3vmin 0 rgba(0, 0, 0, 0.336);
+        }
+        &.cardHidden{
+            opacity: 0;
+            cursor: default;
+        }
+        &.ToLeft, &.ToRight{
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            background-color: $red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 1;
+            i{
+                font-size: 10vmin;
+                text-align: center;
+                color: $white;
+            }
+            &:hover i {
+                opacity: 0.5;
+            }
+        }
+        &.ToLeft{left: 0;}
+        &.ToRight{right: 0;}
+    }
+    
+}
+.InfoDiapo{
+    display: none;
+}
+.infoProject{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.534);
+    color:$white;
+    margin:5px 20vmin;
+    @media screen  and (max-width:800px){
+        margin:5px;
+    }
+    padding:3px;
+    border-radius: 10px;
+}
+.cardDiapoL{
+    background: linear-gradient(90deg,transparent, $black) !important;
+}
+.cardDiapoR{
+    background: linear-gradient(270deg,transparent, $black) !important;
+}

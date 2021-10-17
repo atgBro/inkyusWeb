@@ -1,0 +1,98 @@
+#other{
+    h3{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: "";
+            background-color: $red;
+            top:calc(100% + 0.25em);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 0.5em;
+            border-radius: 0.25em;
+        }
+    }
+    background: url("../img/backgroundOther.png");
+    @media screen  and (min-width:800px){
+        display: grid;
+        grid-template: 
+        "tt tt" 3em
+        "gj gp" auto / 1fr 1fr;
+        > h2{grid-area: tt;}
+        > .otherGJ{grid-area: gj;}
+        > .otherGp{grid-area: gp;}
+    }
+    
+    > div{
+        display: flex;
+        flex-direction: column;
+        > * {align-self: center;} 
+    }
+    a{text-decoration: none;}
+    .cardW{
+        display: flex;
+        @media screen  and (max-width:950px){
+            flex-direction: column;
+        }
+    }
+    p{
+        text-align: center;
+        vertical-align: middle;
+        padding:10px; 
+        margin:10px;
+        font-size: 1.2em;
+        @media screen  and (min-width:800px){
+            height: 50vh;
+        }
+        @media screen  and (min-width:950px){
+            height: 30vh;
+        }
+        border-radius: 20px;
+        background-color: $black;
+    }
+    .cardOther{
+        cursor: pointer;
+        height: 150px;
+        width: 150px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        
+        > * {align-self: center;} 
+        background: radial-gradient($black, $blackLight);
+        border: 3px solid $black; 
+        margin: 10px;
+        i {font-size: 75px;}
+        position: relative;
+        overflow: hidden;
+        span{
+            display: none;
+        }
+        &:hover{
+            &::after{
+                content: "";
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                height: 90%;
+                width: 90%;
+                border-radius: 100%;
+                background-color: $black;
+                opacity: 0.8;
+            }
+            span{
+                z-index: 2;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 5%; 
+                width: 90%;
+                text-align: center;
+                vertical-align:middle;
+            }
+        }
+    }
+}

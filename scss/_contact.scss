@@ -1,0 +1,51 @@
+#contact{
+    background: url(../img/backgroundContact.png);
+    .cardContact{
+        min-height: 80vh;
+        padding-top: 6vmin;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: url("../img/SVG/blocNote3.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        * {
+            color:$black;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.2em;
+        }
+        p{
+            margin:4px 0px 2px 0px;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            input{
+                align-self: center;
+                margin-block: 10px;
+                color:$black;
+                border-radius: 10px;
+                padding:5px;
+                border:$white solid 2px;
+                width: 25%;
+                @media screen  and (max-width:600px){
+                    width: 50%;
+                }
+                text-align: center;
+            }
+            [type=submit]{
+                cursor: pointer;
+                background-color: $blackLight;
+                color:$white;
+                border: $black solid 2px;
+                &:hover{
+                    background-color: $black;
+                }
+            }
+        }
+    }
+}

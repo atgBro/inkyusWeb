@@ -1,0 +1,55 @@
+nav{
+    position: relative;
+    background-color: $black;
+    position: fixed;
+    width: 200px;
+    @media screen and (max-width:800px){
+        width: 50px;
+        //* {display: none;}
+    }
+    height: 100vh;
+    top:0;
+    left: 0;
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.534);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > * {align-self: center;}
+    > .link{
+        align-self: flex-end;
+    }
+    
+    .link{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        > a{
+            text-decoration: none;
+            padding: 10px;
+            &:hover{
+                transform: translateX(-10px);
+            }
+            i{
+                color:$white;
+                &.fa-hashtag{
+                    opacity: 0.3;
+                }
+            }
+        }
+        .bubbleLink{
+            position: absolute;
+            left: calc(100% + 15px);
+            height: 15px;
+            width: 15px;
+            border-radius: 10px;
+            background-color: $black;
+            transform: translateY(-50%);
+            transition: 1s, 1s;
+            transition-property: top left;
+        }
+        a:active ~ .bubbleLink{
+            left: calc(100% + 100px);
+        }
+    }
+}

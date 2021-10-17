@@ -1,0 +1,60 @@
+#skills{
+    background: 
+    url("../img/backgroundSkill.png"),
+    $bg; 
+    display: grid;
+    grid-template:  
+    "tt tt tt" auto
+    "s1 s2 s3" 1fr
+    "s4 s5 s6" 1fr / 1fr 1fr 1fr
+    ;
+    @media screen and (max-width:1000px) {
+        grid-template: 
+    "tt tt" auto
+    "s1 s2" 1fr
+    "s3 s4" 1fr
+    "s5 s6" 1fr / 1fr 1fr
+    ;
+    }
+    @media screen and (max-width:600px) {
+        grid-template: 
+    "tt" auto
+    "s1" 1fr
+    "s2" 1fr
+    "s3" 1fr
+    "s4" 1fr
+    "s5" 1fr
+    "s6" 1fr / 1fr
+    ;
+    }
+    > h2{grid-area: tt;}
+    > * {text-align: center;}
+    article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .img{
+            height: 200px;
+            width: 200px;
+            align-self: center;
+            border-radius: 100%;
+            background: 
+            radial-gradient($blackLight, $black)
+            ,$black;
+        }
+        h3 {
+            position: relative;
+            &::after{
+                position: absolute;
+                content: "";
+                background-color: $red;
+                top:calc(100% + 0.25em);
+                left: 50%;
+                transform: translateX(-50%);
+                width: 10%;
+                height: 0.5em;
+                border-radius: 0.25em;
+            }
+        }
+    }
+}

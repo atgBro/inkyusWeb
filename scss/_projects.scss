@@ -1,0 +1,82 @@
+#projects{
+    background: url("../img/backgroundProject.png");
+    position: relative;
+    @media screen  and (max-width:800px){min-height: auto;}
+    .projectView{
+        position: relative;
+        height: calc(60vh + 18vmin);
+        @media screen  and (max-width:800px){
+            min-height: auto;
+            height: calc(40vh);
+        }
+        .projectPc{
+            z-index: 3;
+            position: absolute;
+            //height: 100%;
+            width: calc( 80% - 10vmin);
+            @media screen  and (max-width:800px){
+                width: calc( 70% - 10vmin);
+            }
+            max-height: 60vh;
+            aspect-ratio: 16/9;
+            border-radius: 5%;
+            border: 4vmin solid $black;
+            background: $blackLight;
+            &::after{
+                content: "";
+                position: absolute;
+                width: 70%;
+                height: 10vmin;
+                border-radius: 100%;
+                background:  $black;
+                top:100%;
+                left: 50%;
+                transform: translateX(-50%);
+                box-shadow: 0px 5px 20px 5px $black;
+            }
+        }
+        .projectMobile{
+            z-index: 3;
+            position: absolute;
+            height: 50%;
+            //width: calc(25% - 5vmin);
+            aspect-ratio: 9/16;
+            border-radius: 5%;
+            border: 2vmin solid $black;
+            border-width: 2vmin 0.5vmin;
+            background: $blackLight;
+            top: 5vmin;
+            right: 0;
+            @media screen  and (max-width:800px){
+                aspect-ratio: 9/16;
+                height: auto;
+                width: calc(100% - 70%);
+                right: 0;
+                top:0
+            }
+            box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.493);
+            &::after{
+                content: "";
+                position: absolute;
+                z-index: 2;
+                width: 20%;
+                height: 1vmin;
+                border-radius: 100%;
+                background:  $blackLight;
+                top:-1.5vmin;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .projectMobile, .projectPc{
+            .imgProject{
+                position: absolute;
+                top:0;
+                left:0;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+    }
+}
