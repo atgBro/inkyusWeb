@@ -14,19 +14,19 @@
 @import "./projects";                   
 @import "./contact";                     
 @import "./other";       
-//          
-html{scroll-behavior:smooth}           
+//           
+html{scroll-behavior:smooth}  
 body{     
     margin: 0;    
     padding: 0;  
     margin-left: 200px;  
     @media screen and (max-width:800px){   
         margin-left: 50px; 
-    } 
+    }  
     background-color: $bg;   
-    position: relative;                     
+    position: relative;                      
 }                            
-main > *{        
+main > *{         
     padding-inline: 5vmin;        
 }  
 .img{    

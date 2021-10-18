@@ -8,7 +8,7 @@
 h1 {
   font-size: 3em;
   text-align: center;
-  max-height: calc(95vw - 50px);
+  max-width: calc(90vw - 50px);
 }
 
 h2 {
@@ -17,6 +17,13 @@ h2 {
   margin: 2em;
   text-align: center;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 800px) {
+  h2 {
+    margin-inline: 0;
+    text-align: center;
+  }
 }
 
 .normalCase {

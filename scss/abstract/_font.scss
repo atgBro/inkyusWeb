@@ -16,6 +16,10 @@ h2{
     margin:2em;
     text-align: center;
     text-transform: uppercase;
+    @media screen and (max-width:800px){
+        margin-inline: 0;
+        text-align: center;
+    }
 }
 
 .normalCase{
