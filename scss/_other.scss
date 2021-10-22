@@ -1,98 +1,143 @@
 #other{
-    h3{
-        position: relative;
-        &::after{
-            position: absolute;
-            content: "";
-            background-color: $red;
-            top:calc(100% + 0.25em);
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 0.5em;
-            border-radius: 0.25em;
-        }
-    }
-    background: url("../img/backgroundOther.png");
-    @media screen  and (min-width:800px){
-        display: grid;
+    background: url("../img/backgroundProject.png");
+    position: relative;
+    padding:0;
+    display: grid;
+    height: 100vh;
+    grid-template: 
+    "p1 p2" 50vh
+    "p3 p4" 50vh / 1fr 1fr;
+    @media screen and (max-width:600px){
+        height: 200vh;
         grid-template: 
-        "tt tt" 3em
-        "gj gp" auto / 1fr 1fr;
-        > h2{grid-area: tt;}
-        > .otherGJ{grid-area: gj;}
-        > .otherGp{grid-area: gp;}
+        "p1" 50vh
+        "p2" 50vh
+        "p3" 50vh
+        "p4" 50vh / 1fr;
     }
-    
-    > div{
-        display: flex;
-        flex-direction: column;
-        > * {align-self: center;} 
+    .title{
+        position: relative;
     }
-    a{text-decoration: none;}
-    .cardW{
-        display: flex;
-        @media screen  and (max-width:950px){
-            flex-direction: column;
+    .h2{
+        position: absolute;
+        top:5px;
+        left: 50%;
+        > *{padding:2px 20px;}
+        > *{margin:0;}
+        height: calc(7em + 4px);
+        width: calc(7em + 4px);
+        top:50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: $yellow;
+        > *{color:$black;transform: rotate(-45deg);}
+        border-radius: 0;
+        @media screen and (max-width:600px){
+
         }
     }
-    p{
-        text-align: center;
-        vertical-align: middle;
-        padding:10px; 
-        margin:10px;
-        font-size: 1.2em;
-        @media screen  and (min-width:800px){
-            height: 50vh;
-        }
-        @media screen  and (min-width:950px){
-            height: 30vh;
-        }
-        border-radius: 20px;
-        background-color: $black;
-    }
-    .cardOther{
-        cursor: pointer;
-        height: 150px;
-        width: 150px;
-        border-radius: 100%;
+    *:not(.textProject){
         display: flex;
         justify-content: center;
         flex-direction: column;
-        
-        > * {align-self: center;} 
-        background: radial-gradient($black, $blackLight);
-        border: 3px solid $black; 
-        margin: 10px;
-        i {font-size: 75px;}
-        position: relative;
-        overflow: hidden;
-        span{
-            display: none;
+        text-align: center;
+        > *{align-self: center;}
+    }
+    .project{
+        border:4px solid $black;
+        display: grid;
+        grid-template:
+        "title title link" 1fr
+        "stack texte texte" 2fr / 1fr 1fr 1fr;
+        > h3{grid-area: title;}
+        .linkProject{grid-area: link;}
+        .stackProject{grid-area: stack;}
+        .textProject{grid-area: texte;}
+        .linkProject{
+            font-size: 2em;
+            flex-direction: row;
+            a{text-decoration: none;}
+            i{
+                padding: 10px;
+                transition-duration: 1s;
+                transition-property: color;
+                &:hover{color:$red}
+            }
+        }
+        h3{
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.767);
+            position: relative;
+            &::after{
+                position: absolute;
+                content: "";
+                bottom: 5px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 4px;
+                border-radius: 2px;
+                background-color: $red;
+            }
+        }
+        .textProject{
+            overflow-y: auto;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.767);
+            p{
+                text-align: justify;
+                margin:5px;
+                padding: 5px; 
+                
+            }
         }
         &:hover{
-            &::after{
-                content: "";
-                position: absolute;
-                top: 5%;
-                left: 5%;
-                height: 90%;
-                width: 90%;
-                border-radius: 100%;
-                background-color: $black;
-                opacity: 0.8;
+            grid-template: 
+            "title title link" 50%
+            "stack texte texte" 50% / 0 0 100%;
+            > h3{display: none;}
+            .linkProject{
+                font-size: 4em;
+                a {position: relative;}
+                .toCode::after{content: "Son code";}
+                .toWeb::after{content: "Le site";}
+                a::after{
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 14px;
+                    text-shadow: 0 0 3px black;
+                    transition-duration: 1s, 1s;
+                    transition-property: color, text-shadow;
+                }
+                a:hover::after{color:$red;text-shadow: 0 0 3px white;}
             }
-            span{
-                z-index: 2;
-                display: inline-block;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 5%; 
-                width: 90%;
-                text-align: center;
-                vertical-align:middle;
-            }
+            .stackProject{display: none;}
+            border:4px solid $yellow;
         }
     }
+    .p2{
+        background: 
+        radial-gradient(rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0.473))
+        ,url("../img/project/autres/gameJam.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .p3{
+        background:  
+        radial-gradient(rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0.473))
+        ,url("../img/project/autres/insta.png");
+        background-size: cover;
+        background-position: center;
+    }
+    .p4{
+        background:  
+        radial-gradient(rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0.473))
+        ,url("../img/project/autres/behance.jpg");
+        background-size: cover;
+        background-position: center; 
+    }
 }
+

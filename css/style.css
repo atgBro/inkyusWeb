@@ -453,103 +453,255 @@ footer * {
 #projects {
   background: url("../img/backgroundProject.png");
   position: relative;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  grid-template: "p1 p2" 50vh "p3 p4" 50vh / 1fr 1fr;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   #projects {
-    min-height: auto;
+    height: 200vh;
+    grid-template: "p1" 50vh "p2" 50vh "p3" 50vh "p4" 50vh / 1fr;
   }
 }
 
-#projects .projectView {
-  position: relative;
-  height: calc(60vh + 18vmin);
-}
-
-@media screen and (max-width: 800px) {
-  #projects .projectView {
-    min-height: auto;
-    height: calc(40vh);
-  }
-}
-
-#projects .projectView .projectPc {
-  z-index: 3;
+#projects > .h2 {
   position: absolute;
-  width: calc( 80% - 10vmin);
-  max-height: 60vh;
-  aspect-ratio: 16/9;
-  border-radius: 5%;
-  border: 4vmin solid #06080c;
-  background: #16181f;
-}
-
-@media screen and (max-width: 800px) {
-  #projects .projectView .projectPc {
-    width: calc( 70% - 10vmin);
-  }
-}
-
-#projects .projectView .projectPc::after {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 10vmin;
-  border-radius: 100%;
-  background: #06080c;
-  top: 100%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  -webkit-box-shadow: 0px 5px 20px 5px #06080c;
-          box-shadow: 0px 5px 20px 5px #06080c;
-}
-
-#projects .projectView .projectMobile {
-  z-index: 3;
-  position: absolute;
-  height: 50%;
-  aspect-ratio: 9/16;
-  border-radius: 5%;
-  border: 2vmin solid #06080c;
-  border-width: 2vmin 0.5vmin;
-  background: #16181f;
-  top: 5vmin;
-  right: 0;
-  -webkit-box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.493);
-          box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.493);
-}
-
-@media screen and (max-width: 800px) {
-  #projects .projectView .projectMobile {
-    aspect-ratio: 9/16;
-    height: auto;
-    width: calc(100% - 70%);
-    right: 0;
-    top: 0;
-  }
-}
-
-#projects .projectView .projectMobile::after {
-  content: "";
-  position: absolute;
+  top: auto;
+  bottom: calc(100% - 1em);
+  left: 15px;
+  border-radius: 25px;
+  background-color: #192131;
   z-index: 2;
-  width: 20%;
-  height: 1vmin;
-  border-radius: 100%;
-  background: #16181f;
-  top: -1.5vmin;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+#projects > .h2 > * {
+  padding: 2px 20px;
+}
+
+#projects > .h2 > * {
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  #projects > .h2 {
+    height: calc(7em + 4px);
+    width: calc(7em + 4px);
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #ffd900;
+    border-radius: 0;
+  }
+  #projects > .h2 > * {
+    color: #06080c;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+
+#projects *:not(.textProject) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+#projects *:not(.textProject) > * {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#projects .project {
+  border: 4px solid #06080c;
+  display: -ms-grid;
+  display: grid;
+  grid-template: "title title link" 1fr "stack texte texte" 2fr / 1fr 1fr 1fr;
+}
+
+#projects .project > h3 {
+  grid-area: title;
+}
+
+#projects .project .linkProject {
+  grid-area: link;
+}
+
+#projects .project .stackProject {
+  grid-area: stack;
+}
+
+#projects .project .textProject {
+  grid-area: texte;
+}
+
+#projects .project .stackProject {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#projects .project .stackProject .cardStack {
+  height: 5vw;
+  width: 4vw;
+}
+
+@media screen and (max-width: 600px) {
+  #projects .project .stackProject .cardStack {
+    height: 10vw;
+    width: 8vw;
+  }
+}
+
+#projects .project .linkProject {
+  font-size: 2em;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#projects .project .linkProject a {
+  text-decoration: none;
+}
+
+#projects .project .linkProject i {
+  padding: 10px;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-property: color;
+  transition-property: color;
+}
+
+#projects .project .linkProject i:hover {
+  color: red;
+}
+
+#projects .project h3 {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.767);
+  position: relative;
+}
+
+#projects .project h3::after {
+  position: absolute;
+  content: "";
+  bottom: 5px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: red;
 }
 
-#projects .projectView .projectMobile .imgProject, #projects .projectView .projectPc .imgProject {
-  position: absolute;
-  top: 0;
-  left: 0;
+#projects .project .textProject {
+  overflow-y: auto;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.767);
+}
+
+#projects .project .textProject p {
+  text-align: justify;
+  margin: 5px;
+  padding: 5px;
+}
+
+#projects .project:hover {
+  grid-template: "title title link" 50% "stack texte texte" 50% / 0 0 100%;
+  border: 4px solid #ffd900;
+}
+
+#projects .project:hover > h3 {
+  display: none;
+}
+
+#projects .project:hover .linkProject {
+  font-size: 4em;
+}
+
+#projects .project:hover .linkProject a {
+  position: relative;
+}
+
+#projects .project:hover .linkProject .toCode::after {
+  content: "Son code";
+}
+
+#projects .project:hover .linkProject .toWeb::after {
+  content: "Le site";
+}
+
+#projects .project:hover .linkProject a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
   width: 100%;
+  text-align: center;
+  font-size: 14px;
+  text-shadow: 0 0 3px black;
+  -webkit-transition-duration: 1s, 1s;
+          transition-duration: 1s, 1s;
+  -webkit-transition-property: color, text-shadow;
+  transition-property: color, text-shadow;
+}
+
+#projects .project:hover .linkProject a:hover::after {
+  color: red;
+  text-shadow: 0 0 3px white;
+}
+
+#projects .project:hover .stackProject {
+  display: none;
+}
+
+#projects .p1 {
+  background: radial-gradient(rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.473)), url("../img/project/agence/pc.PNG");
+  background-size: cover;
+  background-position: center;
+}
+
+#projects .p2 {
+  background: radial-gradient(rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.473)), url("../img/project/twiym/pc.PNG");
+  background-size: cover;
+  background-position: center;
+}
+
+#projects .p3 {
+  background: radial-gradient(rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.473)), url("../img/project/perso/pc.PNG");
+  background-size: cover;
+  background-position: center;
+}
+
+#projects .p4 {
+  background: radial-gradient(rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.473)), url("../img/project/yogart/pc1.PNG");
+  background-size: cover;
+  background-position: center;
 }
 
 #contact {
@@ -631,105 +783,54 @@ footer * {
 }
 
 #other {
-  background: url("../img/backgroundOther.png");
+  background: url("../img/backgroundProject.png");
+  position: relative;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  grid-template: "p1 p2" 50vh "p3 p4" 50vh / 1fr 1fr;
 }
 
-#other h3 {
+@media screen and (max-width: 600px) {
+  #other {
+    height: 200vh;
+    grid-template: "p1" 50vh "p2" 50vh "p3" 50vh "p4" 50vh / 1fr;
+  }
+}
+
+#other .title {
   position: relative;
 }
 
-#other h3::after {
+#other .h2 {
   position: absolute;
-  content: "";
-  background-color: red;
-  top: calc(100% + 0.25em);
+  top: 5px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 20px;
-  height: 0.5em;
-  border-radius: 0.25em;
+  height: calc(7em + 4px);
+  width: calc(7em + 4px);
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #ffd900;
+  border-radius: 0;
 }
 
-@media screen and (min-width: 800px) {
-  #other {
-    display: -ms-grid;
-    display: grid;
-    grid-template: "tt tt" 3em "gj gp" auto / 1fr 1fr;
-  }
-  #other > h2 {
-    grid-area: tt;
-  }
-  #other > .otherGJ {
-    grid-area: gj;
-  }
-  #other > .otherGp {
-    grid-area: gp;
-  }
+#other .h2 > * {
+  padding: 2px 20px;
 }
 
-#other > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+#other .h2 > * {
+  margin: 0;
 }
 
-#other > div > * {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+#other .h2 > * {
+  color: #06080c;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
-#other a {
-  text-decoration: none;
-}
-
-#other .cardW {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media screen and (max-width: 950px) {
-  #other .cardW {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-#other p {
-  text-align: center;
-  vertical-align: middle;
-  padding: 10px;
-  margin: 10px;
-  font-size: 1.2em;
-  border-radius: 20px;
-  background-color: #06080c;
-}
-
-@media screen and (min-width: 800px) {
-  #other p {
-    height: 50vh;
-  }
-}
-
-@media screen and (min-width: 950px) {
-  #other p {
-    height: 30vh;
-  }
-}
-
-#other .cardOther {
-  cursor: pointer;
-  height: 150px;
-  width: 150px;
-  border-radius: 100%;
+#other *:not(.textProject) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -740,50 +841,157 @@ footer * {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: radial-gradient(#06080c, #16181f);
-  border: 3px solid #06080c;
-  margin: 10px;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
 }
 
-#other .cardOther > * {
+#other *:not(.textProject) > * {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-#other .cardOther i {
-  font-size: 75px;
+#other .project {
+  border: 4px solid #06080c;
+  display: -ms-grid;
+  display: grid;
+  grid-template: "title title link" 1fr "stack texte texte" 2fr / 1fr 1fr 1fr;
 }
 
-#other .cardOther span {
+#other .project > h3 {
+  grid-area: title;
+}
+
+#other .project .linkProject {
+  grid-area: link;
+}
+
+#other .project .stackProject {
+  grid-area: stack;
+}
+
+#other .project .textProject {
+  grid-area: texte;
+}
+
+#other .project .linkProject {
+  font-size: 2em;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#other .project .linkProject a {
+  text-decoration: none;
+}
+
+#other .project .linkProject i {
+  padding: 10px;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-property: color;
+  transition-property: color;
+}
+
+#other .project .linkProject i:hover {
+  color: red;
+}
+
+#other .project h3 {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.767);
+  position: relative;
+}
+
+#other .project h3::after {
+  position: absolute;
+  content: "";
+  bottom: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: red;
+}
+
+#other .project .textProject {
+  overflow-y: auto;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.767);
+}
+
+#other .project .textProject p {
+  text-align: justify;
+  margin: 5px;
+  padding: 5px;
+}
+
+#other .project:hover {
+  grid-template: "title title link" 50% "stack texte texte" 50% / 0 0 100%;
+  border: 4px solid #ffd900;
+}
+
+#other .project:hover > h3 {
   display: none;
 }
 
-#other .cardOther:hover::after {
-  content: "";
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  height: 90%;
-  width: 90%;
-  border-radius: 100%;
-  background-color: #06080c;
-  opacity: 0.8;
+#other .project:hover .linkProject {
+  font-size: 4em;
 }
 
-#other .cardOther:hover span {
-  z-index: 2;
-  display: inline-block;
+#other .project:hover .linkProject a {
+  position: relative;
+}
+
+#other .project:hover .linkProject .toCode::after {
+  content: "Son code";
+}
+
+#other .project:hover .linkProject .toWeb::after {
+  content: "Le site";
+}
+
+#other .project:hover .linkProject a::after {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  left: 5%;
-  width: 90%;
+  top: 100%;
+  left: 0;
+  width: 100%;
   text-align: center;
-  vertical-align: middle;
+  font-size: 14px;
+  text-shadow: 0 0 3px black;
+  -webkit-transition-duration: 1s, 1s;
+          transition-duration: 1s, 1s;
+  -webkit-transition-property: color, text-shadow;
+  transition-property: color, text-shadow;
+}
+
+#other .project:hover .linkProject a:hover::after {
+  color: red;
+  text-shadow: 0 0 3px white;
+}
+
+#other .project:hover .stackProject {
+  display: none;
+}
+
+#other .p2 {
+  background: radial-gradient(rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.473)), url("../img/project/autres/gameJam.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#other .p3 {
+  background: radial-gradient(rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.473)), url("../img/project/autres/insta.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#other .p4 {
+  background: radial-gradient(rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.473)), url("../img/project/autres/behance.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 html {

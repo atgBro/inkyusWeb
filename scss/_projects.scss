@@ -1,82 +1,168 @@
 #projects{
     background: url("../img/backgroundProject.png");
     position: relative;
-    @media screen  and (max-width:800px){min-height: auto;}
-    .projectView{
-        position: relative;
-        height: calc(60vh + 18vmin);
-        @media screen  and (max-width:800px){
-            min-height: auto;
-            height: calc(40vh);
+    padding:0;
+    display: grid;
+    height: 100vh;
+    grid-template: 
+    "p1 p2" 50vh
+    "p3 p4" 50vh / 1fr 1fr;
+    @media screen and (max-width:600px){
+        height: 200vh;
+        grid-template: 
+        "p1" 50vh
+        "p2" 50vh
+        "p3" 50vh
+        "p4" 50vh / 1fr;
+    }
+    
+    > .h2{
+        position: absolute;
+        top:auto;
+        bottom:calc(100% - 1em);
+        left: 15px;
+        > *{padding:2px 20px;}
+        > *{margin:0;}
+        border-radius: 25px;
+        background-color: $bg;
+        z-index: 2;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        @media screen and (min-width:600px){
+            height: calc(7em + 4px);
+            width: calc(7em + 4px);
+            top:50%;
+            left:50%;
+            bottom: auto;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background-color: $yellow;
+            > *{color:$black;transform: rotate(-45deg);}
+            border-radius: 0;
         }
-        .projectPc{
-            z-index: 3;
-            position: absolute;
-            //height: 100%;
-            width: calc( 80% - 10vmin);
-            @media screen  and (max-width:800px){
-                width: calc( 70% - 10vmin);
+    }
+    *:not(.textProject){
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        > *{align-self: center;}
+    }
+    .project{
+        border:4px solid $black;
+        display: grid;
+        grid-template:
+        "title title link" 1fr
+        "stack texte texte" 2fr / 1fr 1fr 1fr;
+        > h3{grid-area: title;}
+        .linkProject{grid-area: link;}
+        .stackProject{grid-area: stack;}
+        .textProject{grid-area: texte;}
+        .stackProject{
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            .cardStack{ 
+                height: 5vw;
+                width: 4vw;
+                @media screen and (max-width:600px){
+                    height: 10vw;
+                    width: 8vw;
+                }
             }
-            max-height: 60vh;
-            aspect-ratio: 16/9;
-            border-radius: 5%;
-            border: 4vmin solid $black;
-            background: $blackLight;
+        }
+        .linkProject{
+            font-size: 2em;
+            flex-direction: row;
+            a{text-decoration: none;}
+            i{
+                padding: 10px;
+                transition-duration: 1s;
+                transition-property: color;
+                &:hover{color:$red}
+            }
+        }
+        h3{
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.767);
+            position: relative;
             &::after{
-                content: "";
                 position: absolute;
-                width: 70%;
-                height: 10vmin;
-                border-radius: 100%;
-                background:  $black;
-                top:100%;
+                content: "";
+                bottom: 5px;
                 left: 50%;
                 transform: translateX(-50%);
-                box-shadow: 0px 5px 20px 5px $black;
+                width: 50px;
+                height: 4px;
+                border-radius: 2px;
+                background-color: $red;
             }
         }
-        .projectMobile{
-            z-index: 3;
-            position: absolute;
-            height: 50%;
-            //width: calc(25% - 5vmin);
-            aspect-ratio: 9/16;
-            border-radius: 5%;
-            border: 2vmin solid $black;
-            border-width: 2vmin 0.5vmin;
-            background: $blackLight;
-            top: 5vmin;
-            right: 0;
-            @media screen  and (max-width:800px){
-                aspect-ratio: 9/16;
-                height: auto;
-                width: calc(100% - 70%);
-                right: 0;
-                top:0
-            }
-            box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.493);
-            &::after{
-                content: "";
-                position: absolute;
-                z-index: 2;
-                width: 20%;
-                height: 1vmin;
-                border-radius: 100%;
-                background:  $blackLight;
-                top:-1.5vmin;
-                left: 50%;
-                transform: translateX(-50%);
+        .textProject{
+            overflow-y: auto;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.767);
+            p{
+                text-align: justify;
+                margin:5px;
+                padding: 5px; 
+                 
             }
         }
-        .projectMobile, .projectPc{
-            .imgProject{
-                position: absolute;
-                top:0;
-                left:0;
-                height: 100%;
-                width: 100%;
+        &:hover{
+            grid-template: 
+            "title title link" 50%
+            "stack texte texte" 50% / 0 0 100%;
+            > h3{display: none;}
+            .linkProject{
+                font-size: 4em;
+                a {position: relative;}
+                .toCode::after{content: "Son code";}
+                .toWeb::after{content: "Le site";}
+                a::after{
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 14px;
+                    text-shadow: 0 0 3px black;
+                    transition-duration: 1s, 1s;
+                    transition-property: color, text-shadow;
+                }
+                a:hover::after{color:$red;text-shadow: 0 0 3px white;}
             }
+            .stackProject{display: none;}
+            border:4px solid $yellow;
         }
-
+    }
+    .p1{
+        background: 
+        radial-gradient(rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0.473))
+        ,url("../img/project/agence/pc.PNG");
+        background-size: cover;
+        background-position: center;
+    }
+    .p2{
+        background:  
+        radial-gradient(rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0.473))
+        ,url("../img/project/twiym/pc.PNG");
+        background-size: cover;
+        background-position: center;
+    }
+    .p3{
+        background:  
+        radial-gradient(rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0.473))
+        ,url("../img/project/perso/pc.PNG");
+        background-size: cover;
+        background-position: center;
+    }
+    .p4{
+        background:  
+        radial-gradient(rgba(0, 0, 0, 0.205),rgba(0, 0, 0, 0.473))
+        ,url("../img/project/yogart/pc1.PNG");
+        background-size: cover;
+        background-position: center;
     }
 }
+

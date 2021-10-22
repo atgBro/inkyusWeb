@@ -1,9 +1,9 @@
 //abstract
-@import "./abstract/color";    
-@import "./abstract/form";      
-@import "./abstract/font";           
-//animation       
-@import "./animation/textAnim";   
+@import "./abstract/color";     
+@import "./abstract/form";         
+@import "./abstract/font";        
+//animation           
+@import "./animation/textAnim";      
 @import "./animation/diapo";        
 //         
 @import "./nav";                  
@@ -21,12 +21,12 @@ body{
     padding: 0;  
     margin-left: 200px;  
     @media screen and (max-width:800px){   
-        margin-left: 50px; 
-    }  
-    background-color: $bg;   
-    position: relative;                      
-}                            
-main > *{         
+        margin-left: 50px;        
+    }                       
+    background-color: $bg;                        
+    position: relative;                                          
+}                                
+main > *{            
     padding-inline: 5vmin;        
 }  
 .img{    
